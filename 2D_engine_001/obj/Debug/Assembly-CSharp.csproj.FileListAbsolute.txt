@@ -19,3 +19,24 @@ H:\GAME DEV\SECOND SEM\Unity Framework\2D_engine_001\Temp\bin\Debug\UnityEngine.
 H:\GAME DEV\SECOND SEM\Unity Framework\2D_engine_001\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 H:\GAME DEV\SECOND SEM\Unity Framework\2D_engine_001\obj\Debug\Assembly-CSharp.dll
 H:\GAME DEV\SECOND SEM\Unity Framework\2D_engine_001\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.dll
+C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.pdb
