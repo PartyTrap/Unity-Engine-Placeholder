@@ -21,7 +21,6 @@ public class BunnyAIy : MonoBehaviour
 	{
 
 		playerDistance = Vector2.Distance (player.transform.position, transform.position);
-		//Rigidbody2D.constraints.FreezePosition;
 
 		if (playerDistance <= viewRange)
 		{
