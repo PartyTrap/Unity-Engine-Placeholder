@@ -2,16 +2,27 @@
 using System.Collections;
 
 public class BulletHit : MonoBehaviour
-{ 
-
+{ 	
+	public Player_State state;
+	public GameObject player;
 	void Start ()
 	{
-		
+		player = GameObject.Find ("Player");
+		state = player.GetComponent <Player_State> ();
 	}
 	//on collision destroy the bullet Clone
 	void OnCollisionEnter2D(Collision2D OnHit)
 	{
-		Destroy(gameObject);
+		if (OnHit.gameObject.name == state.name) {
+			state.playerHealth -= 25;
+			Destroy (this.gameObject);
+		}else 
+			Destroy(this.gameObject);
 	}
+	void OnTriggerEnter2D(Collider2D obj){
+		
+			Destroy(gameObject);
+	}
+
 }
 
