@@ -15,13 +15,19 @@ public class Player_State : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		curHealth = playerHealth;
-		InvokeRepeating ("looseHealth", 1f, 1f);
+		//InvokeRepeating ("looseHealth", 1f, 1f);
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
+		if (playerHealth < curHealth )
+		{
+			
+			looseHealth();
+			curHealth = playerHealth;
+		}
 		if (playerHealth <= 0) {
 			alive = false;
 			Destroy (this.gameObject);
