@@ -16,6 +16,8 @@ public class BunnyAIy : MonoBehaviour
 	public int frameCounter;
 	public bulletSpawn BS;
 
+	public int dmg = 35;
+
 	private float playerDistance;
 	public GameObject player;
 
@@ -41,7 +43,7 @@ public class BunnyAIy : MonoBehaviour
 			if (frameCounter >= fireDelay && playerDistance <= shootRange) 
 			{
 				frameCounter = 0;
-				BS.fireBullet ();
+				BS.fireBullet (dmg);
 			} 
 
 			else 

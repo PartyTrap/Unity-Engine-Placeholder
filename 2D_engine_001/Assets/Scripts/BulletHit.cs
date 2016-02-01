@@ -5,6 +5,7 @@ public class BulletHit : MonoBehaviour
 { 	
 	public Player_State state;
 	public GameObject player;
+	public int dmg;
 	void Start ()
 	{
 		player = GameObject.Find ("Player");
@@ -14,7 +15,7 @@ public class BulletHit : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D OnHit)
 	{
 		if (OnHit.gameObject.name == state.name) {
-			state.playerHealth -= 25;
+			state.playerHealth -= dmg;
 			Destroy (this.gameObject);
 		}else 
 			Destroy(this.gameObject);

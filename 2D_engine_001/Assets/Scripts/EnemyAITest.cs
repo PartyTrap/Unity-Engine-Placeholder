@@ -6,12 +6,16 @@ public class EnemyAITest : MonoBehaviour
 	public Transform player;
 	public GameObject bulletPrefab;
 
+	public bulletSpawn BS;
+
 	public float viewRange;
 	private float playerDistance;
 	public int frameCounter;
 	public float fireDelay;
 	public float bulletSpeed; 
 	private float z;
+
+	public int dmg = 35;
 
 
 	void Start()
@@ -25,7 +29,7 @@ public class EnemyAITest : MonoBehaviour
 		if (frameCounter >= fireDelay && playerDistance <= viewRange) 
 		{
 			frameCounter = 0;
-			fireBullet ();
+			BS.fireBullet (dmg);
 		} 
 
 		else 
@@ -47,7 +51,9 @@ public class EnemyAITest : MonoBehaviour
 		}
 	}
 
-	void fireBullet()
+
+
+	/*void fireBullet()
 	{
 		//Instanstiate bulletPF clone, add force, ignore collision between other bullet's and the enemy firing them
 		GameObject Clone;
@@ -57,4 +63,5 @@ public class EnemyAITest : MonoBehaviour
 
 		Clone.GetComponent<Rigidbody2D>().AddForce (transform.up * bulletSpeed * 100.0f);
 	}
+	*/
 }
