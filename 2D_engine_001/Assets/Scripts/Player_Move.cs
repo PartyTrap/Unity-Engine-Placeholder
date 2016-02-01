@@ -16,42 +16,33 @@ public class Player_Move : MonoBehaviour {
 		if (Input.GetKey("a"))
 			{
 				keyPressed = "a";
+				anim.SetTrigger("Walk_Left");
 				transform.eulerAngles = new Vector3(0,0,270);
-		       
-		        anim.SetTrigger("Walk_Left");
-				
 		    }
 			else if (Input.GetKey("d"))
 			{
 					keyPressed = "d";
-					
-						transform.eulerAngles = new Vector3(0, 0, 90);
-		        
-			           anim.SetTrigger("Walk_Right");
-				
-			      }
-		else if (Input.GetKey("s"))
-		{
+					anim.SetTrigger("Walk_Right");
+					transform.eulerAngles = new Vector3(0, 0, 90);
+			}
+			else if (Input.GetKey("s"))
+			{
 					keyPressed = "s";
-					
-					transform.eulerAngles = new Vector3(0, 0, 0);
-	         
 					anim.SetTrigger("Walk_Down");
-			 }
+					transform.eulerAngles = new Vector3(0, 0, 0);
+			}
 			else if (Input.GetKey("w"))
 			{
 					keyPressed = "w";
-				
-					transform.eulerAngles = new Vector3(0, 0, 180);
-		       
 					anim.SetTrigger("Walk_Up");
-			      }
+					transform.eulerAngles = new Vector3(0, 0, 180);
+			}
 		      else
-		     {
+		    {
 		           keyPressed = "";
 		           anim.SetTrigger("Idle");
-		       }
-			}
+		    }
+	}
 	// Update is called once per frame
 	void FixedUpdate () {
 
