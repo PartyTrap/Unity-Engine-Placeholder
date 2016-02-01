@@ -26,8 +26,9 @@ public class Player_State : MonoBehaviour {
 			alive = false;
 			Destroy (this.gameObject);
 		}
-
 	}
+		
+
 	//Decrease player health 
 	void looseHealth() 
 	{
