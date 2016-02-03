@@ -5,8 +5,8 @@ public class Enemy_State : MonoBehaviour {
 
 	//public GameObject enemy;
 	//public Transform enemyPos;
-	public uint enemyHealth = 100;
-	public uint resistance = 10;
+	public int enemyHealth = 100;
+	public int resistance = 10;
 	public float knockBack = 100.0f;
 	// Use this for initialization
 	void Start () {

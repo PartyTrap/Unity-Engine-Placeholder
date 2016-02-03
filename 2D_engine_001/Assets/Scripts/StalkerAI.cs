@@ -30,7 +30,7 @@ public class StalkerAI : MonoBehaviour {
 		playerDistance = Vector2.Distance (player.transform.position, transform.position);
 
 		if (playerDistance <= viewRange) {
-			
+
 			transform.LookAt (player.transform.position); // face player.
 
 			transform.position += transform.forward * speed * Time.deltaTime; // move forewards
@@ -55,6 +55,10 @@ public class StalkerAI : MonoBehaviour {
 			{
 				frameCounter++;
 			}
+
+			Vector3 zCorrect = new Vector3 (transform.position.x, transform.position.y, 0f);
+			transform.position = zCorrect; 
+			//fixxes the thing where this and only this enemy learned how to fly away and escape fights.
 		}	
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Sword_State : MonoBehaviour {
 
-	public uint dmg = 35;
+	public int dmg = 35;
 
 	// Use this for initialization
 	void Start () {
