@@ -25,13 +25,13 @@ public class mapGeneration : MonoBehaviour {
 				if (map[y,x] == 0) {
 					GameObject gTile = Instantiate (grassTile) as GameObject;
 					gTile.transform.parent = gameObject.transform;
-					gTile.transform.localPosition = new Vector3 (x, -y, 0);
+					gTile.transform.localPosition = new Vector3 (x, y, 0);
 				}
 				//Make trees at the borders
 				if (map[y,x] == 1) {
 					GameObject tTile = Instantiate (treeTile) as GameObject;
 					tTile.transform.parent = gameObject.transform;
-					tTile.transform.localPosition = new Vector3 (x, -y, 0);
+					tTile.transform.localPosition = new Vector3 (x, y, 0);
 				}
 
 			}
