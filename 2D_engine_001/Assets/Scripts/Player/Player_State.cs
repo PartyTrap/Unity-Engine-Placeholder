@@ -8,6 +8,8 @@ public class Player_State : MonoBehaviour {
 	//added for health bar
 	public float curHealth = 0f;
 	public GameObject HealthBar;
+	public int dmg = 35;
+	public int resistance = 10;
 
 	public bool alive = true;
 

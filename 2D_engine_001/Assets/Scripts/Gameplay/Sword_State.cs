@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Sword_State : MonoBehaviour {
 
-	public uint dmg = 35;
+	public int dmg = 0;
+	public Player_State PS;
 
 	// Use this for initialization
 	void Start () {
-	
+		dmg = PS.dmg;
 	}
 	
 	// Update is called once per frame

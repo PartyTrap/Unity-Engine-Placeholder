@@ -6,6 +6,7 @@ public class bulletSpawn : MonoBehaviour {
 	public float bulletDuration;
 	public GameObject bulletPrefab;
 	public float bulletSpeed;
+	public int direction = 1;
 
 	public void fireBullet(int dmg)
 	{
@@ -17,6 +18,6 @@ public class bulletSpawn : MonoBehaviour {
 
 		Destroy (Clone, bulletDuration);
 		Clone.GetComponent<BulletHit>().dmg = dmg;
-		Clone.GetComponent<Rigidbody2D>().AddForce (transform.up * bulletSpeed * 100.0f);
+		Clone.GetComponent<Rigidbody2D>().AddForce (transform.up * bulletSpeed * 100.0f * direction);
 	}
 }
