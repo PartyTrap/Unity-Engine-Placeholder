@@ -2,25 +2,26 @@
 using System.Collections;
 
 public class Boss : MonoBehaviour {
-	public float knockback = 100.0f;
+	public float knockback = 500.0f;
 	public Sprite sprite1 = null ;
 	public Sprite sprite2 = null ;
 	public SpriteRenderer boss = null;
-	public CircleCollider2D DamageZone = null;
-	public SpriteRenderer s = null; 
+	public CircleCollider2D DamageZone = null; 
 	public GameObject SmashAttack = null;
 	public GameObject Player = null;
+	public GameObject crater = null;
+	public GameObject minion = null;
 	public Player_State BossDamage = null;
 	public bool BossAttackDecision = false;
 	public bool JustAttacked = false;
 	public int BossAttack;
-	public float SmashAttackTimer;
-	public float AttackStartTime;
-	// Use this for initialization
+	public float CurrentAttackTimer;
+	public float CurrentAttackLimit;
+	public int cooldownlimit;
+	public Animator anim;
 	private float cooldowncounter = 0f;
-	private float counter = 0f;
 	void Start () {
-		counter = 0;
+		anim = this.GetComponent<Animator>();
 		DamageZone = SmashAttack.GetComponent<CircleCollider2D> ();
 		BossDamage = Player.GetComponent<Player_State> ();
 
@@ -28,63 +29,101 @@ public class Boss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		counter++;
-		if (counter == 25) {
-			boss.sprite = sprite1;
-		} 
-		if (counter == 50) {
-			boss.sprite = sprite2;
-			counter = 0;
-		}
-		if (!BossAttackDecision) {
-			BossAttack = 0;
-			BossAttackDecision = true;
-			AttackStartTime = Time.time;
-		}
 		if (!JustAttacked) {
+			if (!BossAttackDecision) {
+				BossAttack = Random.Range (0, 3);
+				//BossAttack = 2;
+				BossAttackDecision = true;
+				anim.SetBool ("cooldown", false);
+				anim.SetBool ("bossAttacking", true);
+				//Reset the Timer for when attacks happen
+				CurrentAttackTimer = 0;
+			}
 			if (BossAttackDecision) {
 				switch (BossAttack) {
-				case 0:
-				
-					s = SmashAttack.GetComponent<SpriteRenderer> ();
-					s.enabled = true;
-					s.color = Color.blue;
-					SmashAttackTimer = 300;
-					SmashAttackTimer -= (Time.time - AttackStartTime) * 100;
-					if (SmashAttackTimer < 201) {
-						s.color = Color.yellow;
-					} 
-					if (SmashAttackTimer < 51) {
-						s.color = Color.red;
-					}
-					if (SmashAttackTimer <= 0) {
-						if (DamageZone.IsTouching (Player.GetComponent<BoxCollider2D> ())) {
-							BossDamage.playerHealth = BossDamage.playerHealth - 100;
+				case 0: //SmashAttack;
+					CurrentAttackLimit = 300;
+					CurrentAttackTimer++;
 
-							Vector3 dir;
+					if (CurrentAttackTimer == CurrentAttackLimit) {
+						Instantiate (crater, this.transform.position, this.transform.rotation);
+						if (DamageZone.IsTouching (Player.GetComponent<BoxCollider2D> ())) {
+							BossDamage.playerHealth = BossDamage.playerHealth - 50;
+							//Process Knockback
+
+							Vector2 dir;
 							if (Player.transform.position.x < this.transform.position.x) {
 								Debug.Log ("knockback");
-								dir = new Vector3 ((-Player.transform.position.x - this.transform.position.x), (Player.transform.position.y - this.transform.position.y), 0.0f);
+								dir = new Vector2 ((-Player.transform.position.x - this.transform.position.x), (Player.transform.position.y - this.transform.position.y));
 							} else {
 								Debug.Log ("second kb");
-								dir = new Vector3 ((Player.transform.position.x - this.transform.position.x), (Player.transform.position.y - this.transform.position.y), 0.0f);
+								dir = new Vector2 ((Player.transform.position.x - this.transform.position.x), (Player.transform.position.y - this.transform.position.y));
 							}
 							dir.Normalize ();
-							Debug.Log (dir);
-							Player.GetComponent<Rigidbody2D> ().AddForce (dir * knockback);
+
+							dir.Scale (new Vector2 (knockback, knockback));
+							Debug.Log (dir); 
+							Player.GetComponent<Rigidbody2D> ().AddForce (dir);
 					
 						}
-						s.enabled = false;
-						AttackStartTime = 0;
+						CurrentAttackTimer = 0;
 						BossAttackDecision = false;
 						JustAttacked = true;
+						anim.SetBool ("cooldown", true);
+						anim.SetBool ("bossAttacking", false);
+						cooldownlimit = 180;
 					}
 					break;
+				case 1: //Summon Underlings
+					CurrentAttackLimit = 60;
+
+					//Create the minions
+					if (CurrentAttackTimer == 0) {
+						GameObject a = (Instantiate (minion, this.transform.position, this.transform.rotation)) as GameObject;
+						GameObject b = (Instantiate (minion, this.transform.position, this.transform.rotation)) as GameObject;
+						//Have them spawn on the left and right side of the boss
+						a.transform.Translate (new Vector3 (10, 0, 0));
+						b.transform.Translate (new Vector3 (-10, 0, 0));
+						BunnyAI acon = a.GetComponent<BunnyAI> ();
+						BunnyAI bcon = b.GetComponent<BunnyAI> ();
+						acon.player = GameObject.Find ("Player");
+						bcon.player = GameObject.Find ("Player");
+						//Make them detect the player wherever he is in the arena
+						acon.viewRange = 100; 
+						bcon.viewRange = 100;
+					}
+					CurrentAttackTimer++;
+					if (CurrentAttackTimer == CurrentAttackLimit) {
+						CurrentAttackTimer = 0;
+						BossAttackDecision = false;
+						JustAttacked = true;
+						anim.SetBool ("cooldown", true);
+						anim.SetBool ("bossAttacking", false);
+						cooldownlimit = 360;
+					}
+					break;
+				case 2: //Ring of Thorns
+					CurrentAttackLimit = 240;
+					CurrentAttackTimer++;
+					Rotator r = this.GetComponentInChildren<Rotator> ();
+					r.rotate = true;
+					Debug.Log ("set rotate");
+					if (CurrentAttackTimer == CurrentAttackLimit) {
+						r.rotate = false;
+						CurrentAttackTimer = 0;
+						BossAttackDecision = false;
+						JustAttacked = true;
+						anim.SetBool ("cooldown", true);
+						anim.SetBool ("bossAttacking", false);
+						cooldownlimit = 240;
+					}
+					break;
+
 				}
 			}
 		} else {
 			cooldowncounter++;
-			if (cooldowncounter == 60) {
+			if (cooldowncounter == cooldownlimit) {
 				JustAttacked = false;
 				cooldowncounter = 0;
 			}
