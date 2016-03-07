@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Scene_Transition : MonoBehaviour {
 
+	public string level;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,8 +17,8 @@ public class Scene_Transition : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 
-		Debug.Log ("levelu");
+		Debug.Log ("Level Load");
 		if (col.tag == "Player")
-			SceneManager.LoadScene ("bossBattle");
+			SceneManager.LoadScene (level);
 	}
 }

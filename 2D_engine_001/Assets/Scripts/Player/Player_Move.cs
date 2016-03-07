@@ -23,7 +23,7 @@ public class Player_Move : MonoBehaviour {
 
 	void Update(){
 		isMove = false;
-		transform.eulerAngles = new Vector3(0,0,0);
+		this.transform.eulerAngles = new Vector3(0,0,0);
 		if (Input.GetAxisRaw ("Horizontal") > 0.5f || Input.GetAxisRaw ("Horizontal") < -0.5f) {
 
 			isMove = true;

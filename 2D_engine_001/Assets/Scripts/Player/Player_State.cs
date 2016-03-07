@@ -4,9 +4,10 @@ using System.Collections;
 public class Player_State : MonoBehaviour {
 
 
-	public float playerHealth = 100f;
+	public float playerHealth;
 	//added for health bar
 	public float curHealth = 0f;
+	public float maxHealth = 300;
 	public GameObject HealthBar;
 	public int dmg = 35;
 	public int resistance = 10;
@@ -15,14 +16,13 @@ public class Player_State : MonoBehaviour {
 
 	public bool alive = true;
 
-	void Awake(){
 
-		playerHealth = save.health; 
-
-	}
 	// Use this for initialization
 	void Start () {
-		
+
+		Debug.Log ("Start:");
+		save = GameObject.FindGameObjectWithTag ("Save").GetComponent<Save> ();
+		playerHealth = save.health;
 		curHealth = playerHealth;
 
 		anim = this.GetComponent<Animator> ();

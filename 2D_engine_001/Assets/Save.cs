@@ -10,10 +10,12 @@ public class Save : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (gameObject);
 		PS = GameObject.Find ("Player").GetComponent<Player_State>();
+		//PS.playerHealth = health;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		PS = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_State>();
 		health=PS.playerHealth;
 	}
 }
