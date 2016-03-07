@@ -1,0 +1,340 @@
+fileFormatVersion: 2
+guid: d60c73be4449c6e4b998215dde77c305
+timeCreated: 1457308096
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: white_rabbit_spritesheet_0
+    21300002: white_rabbit_spritesheet_1
+    21300004: white_rabbit_spritesheet_2
+    21300006: white_rabbit_spritesheet_3
+    21300008: white_rabbit_spritesheet_4
+    21300010: white_rabbit_spritesheet_5
+    21300012: white_rabbit_spritesheet_6
+    21300014: white_rabbit_spritesheet_7
+    21300016: white_rabbit_spritesheet_8
+    21300018: white_rabbit_spritesheet_9
+    21300020: white_rabbit_spritesheet_10
+    21300022: white_rabbit_spritesheet_11
+    21300024: white_rabbit_spritesheet_12
+    21300026: white_rabbit_spritesheet_13
+    21300028: white_rabbit_spritesheet_14
+    21300030: white_rabbit_spritesheet_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: white_rabbit_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 192
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 29.5}
+        - {x: -18.5, y: 26.5}
+        - {x: -18.5, y: -29.5}
+        - {x: 18.5, y: -29.5}
+        - {x: 18.5, y: 29.5}
+    - name: white_rabbit_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 194
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 30}
+        - {x: -18.5, y: -29}
+        - {x: -17.5, y: -30}
+        - {x: 18.5, y: -30}
+        - {x: 18.5, y: 30}
+    - name: white_rabbit_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 198
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 29}
+        - {x: -18.5, y: -29}
+        - {x: 18.5, y: -29}
+        - {x: 18.5, y: 29}
+    - name: white_rabbit_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 194
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 30}
+        - {x: -18.5, y: -30}
+        - {x: 16.5, y: -30}
+        - {x: 18.5, y: -27}
+        - {x: 18.5, y: 26}
+        - {x: 16.5, y: 30}
+    - name: white_rabbit_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 128
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 30}
+        - {x: -18, y: -30}
+        - {x: 18, y: -30}
+        - {x: 18, y: 30}
+    - name: white_rabbit_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 131
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 30.5}
+        - {x: -18, y: -30.5}
+        - {x: 18, y: -30.5}
+        - {x: 18, y: 30.5}
+    - name: white_rabbit_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 137
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 29.5}
+        - {x: -19, y: -29.5}
+        - {x: 19, y: -29.5}
+        - {x: 19, y: 29.5}
+    - name: white_rabbit_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 131
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 30.5}
+        - {x: -18, y: -30.5}
+        - {x: 18, y: -30.5}
+        - {x: 18, y: 30.5}
+    - name: white_rabbit_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 64
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 30.5}
+        - {x: -21, y: 15.5}
+        - {x: -21, y: -30.5}
+        - {x: 21, y: -30.5}
+        - {x: 21, y: 26.5}
+        - {x: 18, y: 30.5}
+    - name: white_rabbit_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 68
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 30.5}
+        - {x: -21, y: 15.5}
+        - {x: -21, y: -30.5}
+        - {x: 21, y: -30.5}
+        - {x: 21, y: 26.5}
+        - {x: 18, y: 30.5}
+    - name: white_rabbit_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 72
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 30}
+        - {x: -18, y: 21}
+        - {x: -21, y: 18}
+        - {x: -21, y: -30}
+        - {x: 19, y: -30}
+        - {x: 21, y: -28}
+        - {x: 21, y: 30}
+    - name: white_rabbit_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 68
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 30.5}
+        - {x: -21, y: 15.5}
+        - {x: -21, y: -30.5}
+        - {x: 21, y: -30.5}
+        - {x: 21, y: 26.5}
+        - {x: 18, y: 30.5}
+    - name: white_rabbit_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 42
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 29.5}
+        - {x: -21, y: 15.5}
+        - {x: -21, y: -29.5}
+        - {x: 21, y: -29.5}
+        - {x: 21, y: 11.5}
+        - {x: 0, y: 29.5}
+    - name: white_rabbit_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 4
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 16.5}
+        - {x: 9, y: 19.5}
+        - {x: -1, y: 30.5}
+        - {x: -18, y: 30.5}
+        - {x: -21, y: 16.5}
+        - {x: -21, y: -29.5}
+        - {x: -18, y: -30.5}
+        - {x: 19, y: -30.5}
+        - {x: 21, y: -27.5}
+        - {x: 21, y: 10.5}
+    - name: white_rabbit_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 8
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 30}
+        - {x: -21, y: -29}
+        - {x: -19, y: -30}
+        - {x: 20, y: -30}
+        - {x: 21, y: -28}
+        - {x: 21, y: 19}
+        - {x: 3, y: 30}
+    - name: white_rabbit_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 4
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 30}
+        - {x: -21, y: 20}
+        - {x: -21, y: -30}
+        - {x: 19, y: -30}
+        - {x: 21, y: -28}
+        - {x: 21, y: 14}
+        - {x: 0, y: 30}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

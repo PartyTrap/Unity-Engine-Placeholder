@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 49441341a020c114fb2dd9cf55dad31f
+timeCreated: 1457320970
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: protag_sample_x2_damage_0
+    21300002: protag_sample_x2_damage_1
+    21300004: protag_sample_x2_damage_2
+    21300006: protag_sample_x2_damage_3
+    21300008: protag_sample_x2_damage_4
+    21300010: protag_sample_x2_damage_5
+    21300012: protag_sample_x2_damage_6
+    21300014: protag_sample_x2_damage_7
+    21300016: protag_sample_x2_damage_8
+    21300018: protag_sample_x2_damage_9
+    21300020: protag_sample_x2_damage_10
+    21300022: protag_sample_x2_damage_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 64
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: protag_sample_x2_damage_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 135
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 32}
+        - {x: -22, y: 29}
+        - {x: -22, y: -29}
+        - {x: -15, y: -32}
+        - {x: 19, y: -32}
+        - {x: 22, y: -27}
+        - {x: 22, y: 30}
+        - {x: 17, y: 32}
+    - name: protag_sample_x2_damage_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 69
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 32}
+        - {x: -22, y: -31}
+        - {x: -21, y: -32}
+        - {x: 16, y: -32}
+        - {x: 22, y: -18}
+        - {x: 22, y: 32}
+    - name: protag_sample_x2_damage_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 133
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 32.5}
+        - {x: -21.5, y: -21.5}
+        - {x: -11.5, y: -32.5}
+        - {x: 17.5, y: -32.5}
+        - {x: 21.5, y: -12.5}
+        - {x: 21.5, y: 31.5}
+        - {x: 18.5, y: 32.5}
+    - name: protag_sample_x2_damage_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 70
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 32}
+        - {x: -22, y: -18}
+        - {x: -18, y: -32}
+        - {x: 15, y: -32}
+        - {x: 22, y: -14}
+        - {x: 22, y: 32}
+    - name: protag_sample_x2_damage_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 5
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 6}
+        - {x: 22, y: 24}
+        - {x: 16, y: 32}
+        - {x: -22, y: 32}
+        - {x: -22, y: -22}
+        - {x: -21, y: -29}
+        - {x: -13, y: -32}
+        - {x: 10, y: -32}
+        - {x: 14, y: -26}
+        - {x: 16, y: -16}
+        - {x: 20, y: -4}
+    - name: protag_sample_x2_damage_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 200
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 32}
+        - {x: -22, y: -31}
+        - {x: -18, y: -32}
+        - {x: 22, y: -32}
+        - {x: 22, y: 32}
+    - name: protag_sample_x2_damage_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 199
+        width: 44
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 31.5}
+        - {x: -22, y: -24.5}
+        - {x: -14, y: -31.5}
+        - {x: 13, y: -31.5}
+        - {x: 22, y: -20.5}
+        - {x: 22, y: 31.5}
+    - name: protag_sample_x2_damage_7
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 134
+        width: 44
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 32}
+        - {x: -22, y: -23}
+        - {x: -20, y: -32}
+        - {x: 22, y: -32}
+        - {x: 22, y: 32}
+    - name: protag_sample_x2_damage_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 5
+        width: 44
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 31.5}
+        - {x: -22, y: 31.5}
+        - {x: -22, y: -20.5}
+        - {x: -16, y: -31.5}
+        - {x: 18, y: -31.5}
+        - {x: 22, y: -20.5}
+        - {x: 22, y: 24.5}
+    - name: protag_sample_x2_damage_9
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 197
+        width: 44
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 32.5}
+        - {x: -22, y: -19.5}
+        - {x: -19, y: -32.5}
+        - {x: 17, y: -32.5}
+        - {x: 19, y: -31.5}
+        - {x: 22, y: -19.5}
+        - {x: 22, y: 32.5}
+    - name: protag_sample_x2_damage_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 70
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 32.5}
+        - {x: -13.5, y: 31.5}
+        - {x: -21.5, y: 25.5}
+        - {x: -21.5, y: -18.5}
+        - {x: -17.5, y: -32.5}
+        - {x: 14.5, y: -32.5}
+        - {x: 21.5, y: -22.5}
+        - {x: 21.5, y: 29.5}
+        - {x: 20.5, y: 32.5}
+    - name: protag_sample_x2_damage_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 5
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 32.5}
+        - {x: -21.5, y: -21.5}
+        - {x: -15.5, y: -32.5}
+        - {x: 18.5, y: -32.5}
+        - {x: 21.5, y: -24.5}
+        - {x: 21.5, y: 26.5}
+        - {x: 16.5, y: 32.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
