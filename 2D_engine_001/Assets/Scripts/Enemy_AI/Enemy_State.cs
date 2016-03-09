@@ -26,6 +26,7 @@ public class Enemy_State : MonoBehaviour {
 		Debug.Log ("damage");
 		if (col.gameObject.tag == "PlayerAttacks") {
 			enemyHealth -= col.GetComponent<Sword_State> ().dmg - resistance;
+			this.GetComponent<Animator> ().SetTrigger ("Hit");
 			//this.GetComponent<BunnyAI> ().enabled = false;
 			//Tim's Edits
 			//LImiting the amount of damage the player can do to the boss within a certain number of time
