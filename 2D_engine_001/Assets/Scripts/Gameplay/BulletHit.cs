@@ -22,21 +22,24 @@ public class BulletHit : MonoBehaviour
 	{
 		ES = OnHit.gameObject.GetComponent<Enemy_State> ();
 
-		if (OnHit.gameObject.name == PS.name) {
-			PS.playerHealth -= (dmg - PS.resistance);
-			Destroy (this.gameObject);
-		} else if (ES) {
-			ES.enemyHealth -= (dmg - ES.resistance);
-			anim = OnHit.gameObject.GetComponent<Animator> ();
-			if (anim)
-				anim.SetTrigger ("Hit");
-			Destroy (this.gameObject);
-		}else {
+        if (OnHit.gameObject.name == PS.name)
+        {
+            PS.playerHealth -= (dmg - PS.resistance);
+            Destroy(this.gameObject);
+        }
+        else if (ES)
+        {
+            ES.enemyHealth -= (dmg - ES.resistance);
+            anim = OnHit.gameObject.GetComponent<Animator>();
+            if (anim)
+                anim.SetTrigger("Hit");
+            Destroy(this.gameObject);
+        }else {
 			Destroy (this.gameObject);
 		}
 	}
 	void OnTriggerEnter2D(Collider2D obj){
-		
+        if(obj.tag != "Belt")
 			Destroy(gameObject);
 	}
 
