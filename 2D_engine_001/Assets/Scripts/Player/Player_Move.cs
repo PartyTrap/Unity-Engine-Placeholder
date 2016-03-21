@@ -6,8 +6,8 @@ public class Player_Move : MonoBehaviour {
 	private float moveHorizontal;
 	private float moveVertical;
 
-	private Vector3 move;
-	private bool isMove;
+	public Vector3 move;
+	public bool isMove;
 	public Vector2 lastMove;
 
 	public float Speed;
