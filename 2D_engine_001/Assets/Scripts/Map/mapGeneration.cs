@@ -7,8 +7,12 @@ public class mapGeneration : MonoBehaviour {
 	[SerializeField]
 	public int mapHeight = 50;
 	public int mapWidth = 50;
-	public GameObject treeTile;
-	public GameObject grassTile;
+	public GameObject wallTile;
+	public GameObject floorTile;
+    public GameObject conveyorRightTile;
+    public GameObject conveyorLeftTile;
+    public GameObject conveyorUpTile;
+    public GameObject conveyorDownTile;
 	private int[,] map;
 
 
@@ -23,17 +27,40 @@ public class mapGeneration : MonoBehaviour {
 				//Make everything grass
 
 				if (map[y,x] == 0) {
-					GameObject gTile = Instantiate (grassTile) as GameObject;
+                    GameObject gTile = Instantiate (floorTile) as GameObject;
 					gTile.transform.parent = gameObject.transform;
 					gTile.transform.localPosition = new Vector3 (x, -y, 0);
 				}
 				//Make trees at the borders
 				if (map[y,x] == 1) {
-					GameObject tTile = Instantiate (treeTile) as GameObject;
+                    GameObject tTile = Instantiate (wallTile) as GameObject;
 					tTile.transform.parent = gameObject.transform;
 					tTile.transform.localPosition = new Vector3 (x, -y, 0);
 				}
-
+                if (map[y,x] == 10)
+                {
+                    GameObject tTile = Instantiate (conveyorRightTile) as GameObject;
+                    tTile.transform.parent = gameObject.transform;
+                    tTile.transform.localPosition = new Vector3 (x, -y, 0);
+                }
+                if (map[y,x] == 11)
+                {
+                    GameObject tTile = Instantiate (conveyorDownTile) as GameObject;
+                    tTile.transform.parent = gameObject.transform;
+                    tTile.transform.localPosition = new Vector3 (x, -y, 0);
+                }
+                if (map[y,x] == 12)
+                {
+                    GameObject tTile = Instantiate (conveyorLeftTile) as GameObject;
+                    tTile.transform.parent = gameObject.transform;
+                    tTile.transform.localPosition = new Vector3 (x, -y, 0);
+                }
+                if (map[y,x] == 13)
+                {
+                    GameObject tTile = Instantiate (conveyorUpTile) as GameObject;
+                    tTile.transform.parent = gameObject.transform;
+                    tTile.transform.localPosition = new Vector3 (x, -y, 0);
+                }
 			}
 		}
 
