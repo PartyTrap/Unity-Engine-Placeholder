@@ -4,14 +4,16 @@ using System.Collections;
 public class Player_Dash : MonoBehaviour {
 
 	private Rigidbody2D rb;
-    public int cooldown;
+    public float cooldown;
 	public Player_Move player;
     public int active = 1;
+    public float stamina;
 
 	public float distance;
 	// Use this for initialization
 	void Start () {
 		rb = this.GetComponent<Rigidbody2D> ();
+        stamina = cooldown;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +28,12 @@ public class Player_Dash : MonoBehaviour {
     private IEnumerator wait(){
 
         active = 0;
-        yield return new WaitForSeconds(cooldown);
+        stamina = 0;
+        for (float x = 0; x < cooldown; x = x + 0.01f)
+        {
+            yield return new WaitForSeconds(0.01f);
+            stamina = stamina + 0.01f;
+        }
         active = 1;
     }
         
