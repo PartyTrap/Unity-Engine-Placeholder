@@ -14,6 +14,7 @@ public class mapGeneration : MonoBehaviour {
     public GameObject conveyorUpTile;
     public GameObject conveyorDownTile;
     public GameObject Spike;
+    public GameObject Web;
 	private int[,] map;
 
 
@@ -43,6 +44,16 @@ public class mapGeneration : MonoBehaviour {
                     tTile.transform.parent = gameObject.transform;
                     tTile.transform.localPosition = new Vector3 (x, -y, 0);
                 } 
+                if (map[y, x] == 5)
+                {
+                    GameObject gTile = Instantiate (floorTile) as GameObject;
+                    gTile.transform.parent = gameObject.transform;
+                    gTile.transform.localPosition = new Vector3 (x, -y, 0);
+
+                    GameObject tTile = Instantiate (Web) as GameObject;
+                    tTile.transform.parent = gameObject.transform;
+                    tTile.transform.localPosition = new Vector3 (x, -y, 0);
+                }
                 if (map[y,x] == 10)
                 {
                     GameObject tTile = Instantiate (conveyorRightTile) as GameObject;

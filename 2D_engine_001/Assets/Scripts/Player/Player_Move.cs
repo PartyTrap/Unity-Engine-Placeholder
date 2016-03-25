@@ -11,10 +11,11 @@ public class Player_Move : MonoBehaviour {
 	public Vector2 lastMove;
 
 	public float Speed;
+    public float maxSpeed = 300;
 	private string keyPressed;
 	Animator anim;
 	Rigidbody2D rb;
-	private 
+	//private 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
