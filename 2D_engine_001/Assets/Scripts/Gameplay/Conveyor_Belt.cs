@@ -28,8 +28,8 @@ public class Conveyor_Belt : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D col){
 
-        if (col.tag == "Player")
-            col.attachedRigidbody.AddForce(direction * -speed);
+        //if (col.tag == "Player")
+        //    col.attachedRigidbody.AddForce(direction * -speed);
 
     }
 }

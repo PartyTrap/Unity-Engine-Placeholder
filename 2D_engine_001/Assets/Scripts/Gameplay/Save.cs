@@ -9,7 +9,7 @@ public class Save : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);
-		PS = GameObject.Find ("Player").GetComponent<Player_State>();
+        PS = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_State>();
 		//PS.playerHealth = health;
 	}
 	

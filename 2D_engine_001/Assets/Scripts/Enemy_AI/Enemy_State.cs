@@ -8,6 +8,8 @@ public class Enemy_State : MonoBehaviour {
 	public int recentdamagedealt;
 	public int enemyHealth;
 	public GameObject boss;
+    public GameObject health;
+    public int max = 1;
 	public int resistance = 10;
 	public float knockBack = 100.0f;
 
@@ -61,7 +63,7 @@ public class Enemy_State : MonoBehaviour {
 			if (this.gameObject.tag == "Boss") {
 				Destroy (boss);
 			}
-			Destroy (this.gameObject);
+            DestroyMe();
 		}
 		//Change resistance of Boss enemy depending on HP level
 		if (this.gameObject.tag == "Boss") {
@@ -81,4 +83,20 @@ public class Enemy_State : MonoBehaviour {
 			}
 		}
 	}
+
+    private void DestroyMe(){
+
+        Destroy(this.gameObject);
+        int rand = Random.Range(1, max);
+        if (rand == 1)
+        {
+            GameObject clone;
+            clone = (Instantiate(health, this.transform.position, this.transform.rotation)) as GameObject;
+            clone.transform.eulerAngles = new Vector3(0,0,90);
+        }
+            
+
+
+    }
+
 }

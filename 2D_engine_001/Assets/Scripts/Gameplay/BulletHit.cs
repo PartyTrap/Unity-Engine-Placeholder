@@ -11,23 +11,27 @@ public class BulletHit : MonoBehaviour
 
 	void Start ()
 	{
-		player = GameObject.Find ("Player");
-		if (!player)
-			player = GameObject.Find ("Player_Ranged");
+        player = GameObject.FindGameObjectWithTag("Player");
+		
 		PS = player.GetComponent <Player_State> ();
 
 	}
 	//on collision destroy the bullet Clone
 	void OnCollisionEnter2D(Collision2D OnHit)
 	{
-		ES = OnHit.gameObject.GetComponent<Enemy_State> ();
+        if (OnHit.gameObject.tag == "Pickup")
+        {
+            Physics2D.IgnoreCollision(OnHit.collider, this.gameObject.GetComponent<Collider2D>());
+        }
+        if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss")
+            ES = OnHit.gameObject.GetComponent<Enemy_State> ();
 
-        if (OnHit.gameObject.name == PS.name)
+        if (OnHit.gameObject.tag == "Player")
         {
             PS.playerHealth -= (dmg - PS.resistance);
             Destroy(this.gameObject);
         }
-        else if (ES)
+        else if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss" )
         {
             ES.enemyHealth -= (dmg - ES.resistance);
             anim = OnHit.gameObject.GetComponent<Animator>();
@@ -37,9 +41,10 @@ public class BulletHit : MonoBehaviour
         }else {
 			Destroy (this.gameObject);
 		}
+        ES = null;
 	}
 	void OnTriggerEnter2D(Collider2D obj){
-        if(obj.tag != "Belt")
+        if(obj.tag != "Belt" && obj.tag != "Pickup")
 			Destroy(gameObject);
 	}
 

@@ -34,6 +34,10 @@ public class Player_State : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        if (playerHealth > maxHealth)
+        {
+            playerHealth = maxHealth;
+        }
 		if (playerHealth < curHealth )
 		{
 			
