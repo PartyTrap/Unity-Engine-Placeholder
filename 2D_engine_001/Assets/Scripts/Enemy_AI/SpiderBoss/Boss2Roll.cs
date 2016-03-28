@@ -11,6 +11,7 @@ public class Boss2Roll : MonoBehaviour {
 	public int battleModeTimer = 0;
 	public int battleModeLimit = 100;
 	public BossAttacks attackscript = null;
+	public Collider2D bossCollider;
 	public GameObject player;
 	// Use this for initialization
 	void Start () {
@@ -56,26 +57,26 @@ public class Boss2Roll : MonoBehaviour {
 					switch (stops) {
 					case 0:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 70000);
 						delay = true;
 						break;
 					case 1:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 70000);
 						delay = true;
 						break;
 					case 2:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 70000);
 						delay = true;
 						break;
 					case 3:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 70000);
 						delay = true;
 						break;
 					}
@@ -117,4 +118,5 @@ public class Boss2Roll : MonoBehaviour {
 
 		}
 	}
+
 }
