@@ -15,7 +15,6 @@ public class BulletHit : MonoBehaviour
 		
 		PS = player.GetComponent <Player_State> ();
 
-		Physics2D.IgnoreCollision (GameObject.FindGameObjectWithTag("deathWebs").GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
 	}
 
 	//on collision destroy the bullet Clone
@@ -49,6 +48,5 @@ public class BulletHit : MonoBehaviour
         if(obj.tag != "Belt" && obj.tag != "Pickup" && obj.tag != "Webs" && obj.tag != "Spikes" )
 			Destroy(gameObject);
 	}
-
 }
 
