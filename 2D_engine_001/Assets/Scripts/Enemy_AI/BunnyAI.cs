@@ -23,6 +23,7 @@ public class BunnyAI : MonoBehaviour
 
 	void Start () 
 	{
+		player = GameObject.FindWithTag ("Player");
 		xStartPosition = transform.position.x;
 		frameCounter = 0;
 	}

@@ -15,7 +15,9 @@ public class BulletHit : MonoBehaviour
 		
 		PS = player.GetComponent <Player_State> ();
 
+		Physics2D.IgnoreCollision (GameObject.FindGameObjectWithTag("deathWebs").GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
 	}
+
 	//on collision destroy the bullet Clone
 	void OnCollisionEnter2D(Collision2D OnHit)
 	{
@@ -23,7 +25,7 @@ public class BulletHit : MonoBehaviour
         {
             Physics2D.IgnoreCollision(OnHit.collider, this.gameObject.GetComponent<Collider2D>());
         }
-        if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss")
+		if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss" || OnHit.gameObject.tag == "MommaSpider")
             ES = OnHit.gameObject.GetComponent<Enemy_State> ();
 
         if (OnHit.gameObject.tag == "Player")
@@ -31,7 +33,7 @@ public class BulletHit : MonoBehaviour
             PS.playerHealth -= (dmg - PS.resistance);
             Destroy(this.gameObject);
         }
-        else if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss" )
+		else if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss" || OnHit.gameObject.tag == "MommaSpider")
         {
             ES.enemyHealth -= (dmg - ES.resistance);
             anim = OnHit.gameObject.GetComponent<Animator>();

@@ -18,9 +18,12 @@ public class StalkerAI : MonoBehaviour {
 	public int dmg = 35;
 
 	private float playerDistance;
-	public GameObject player;
+	private GameObject player;
 
-	void Start () {
+	void Start () 
+	{
+		player = GameObject.FindWithTag ("Player");
+
 		frameCounter = 0;
 		shootRange = distanceMax + 1;
 	}
