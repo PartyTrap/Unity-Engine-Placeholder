@@ -25,7 +25,7 @@ public class LightAI : MonoBehaviour {
 	private float pointy;
 	private Vector3 target;
 
-	public Rigidbody2D rb;
+	private Rigidbody2D rb;
 
 	void Start () {
 		frameCounter = 0;
