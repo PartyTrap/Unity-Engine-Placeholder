@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyAITest : MonoBehaviour 
 {
-	public Transform player;
+	private Transform player;
 	public GameObject bulletPrefab;
 
 	public bulletSpawn BS;
@@ -20,6 +20,7 @@ public class EnemyAITest : MonoBehaviour
 
 	void Start()
 	{
+		player = GameObject.FindWithTag ("Player").GetComponent<Transform>();
 		frameCounter = 0;
 	}
 

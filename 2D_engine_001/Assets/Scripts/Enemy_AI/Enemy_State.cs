@@ -13,6 +13,10 @@ public class Enemy_State : MonoBehaviour {
 	public int resistance = 10;
 	public float knockBack = 100.0f;
 
+	//Spiderling jr PF spawn & mommaspider death anim pf
+	public GameObject spiderlingJR;
+	public GameObject spiderDeathPF;
+
 	// Use this for initialization
 	void Start () {
 		if (this.gameObject.tag == "Boss") {
@@ -63,8 +67,26 @@ public class Enemy_State : MonoBehaviour {
 			if (this.gameObject.tag == "Boss") {
 				Destroy (boss);
 			}
+			//If obj is mommaSpider, spawn spider JRs on death
+			if (this.gameObject.tag == "MommaSpider") 
+			{
+				GameObject spider;
+				GameObject spider2;
+
+				spider = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
+				float spiPosY = spider.transform.position.y;
+				spiPosY += 0.5f;
+
+				spider2 = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
+				float spi2PosY = spider.transform.position.y;
+				spi2PosY -= 0.5f;
+
+				GameObject explosionObject = Instantiate(this.spiderDeathPF) as GameObject;
+				explosionObject.transform.position = this.transform.position;
+			}
             DestroyMe();
 		}
+
 		//Change resistance of Boss enemy depending on HP level
 		if (this.gameObject.tag == "Boss") {
 			
