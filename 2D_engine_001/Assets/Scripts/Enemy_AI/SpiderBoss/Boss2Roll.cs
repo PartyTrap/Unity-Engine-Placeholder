@@ -5,8 +5,8 @@ public class Boss2Roll : MonoBehaviour {
 	public bool stop = false;
 	public bool battleMode = false;
 	public bool delay = false;
-	public int summoncounter;
 	public int delaycounter;
+	public int spawncount;
 	public int stops;
 	public int counter;
 	public int battleModeTimer = 0;
@@ -15,7 +15,7 @@ public class Boss2Roll : MonoBehaviour {
 	public Collider2D bossCollider;
 	public GameObject player;
 	public GameObject spawner;
-	public GameObject minions;
+	public GameObject minion;
 	// Use this for initialization
 	void Start () {
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -50);
@@ -44,10 +44,10 @@ public class Boss2Roll : MonoBehaviour {
 						break;
 					}
 					this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -15000);
-					summoncounter++;
-					if (summoncounter == 2) {
-						summoncounter = 0;
-						Instantiate (minions, spawner.transform.position, spawner.transform.rotation);
+					spawncount++;
+					if (spawncount == 2) {
+						spawncount = 0;
+						Instantiate (minion, spawner.transform.position, spawner.transform.rotation);
 					}
 				}
 			}

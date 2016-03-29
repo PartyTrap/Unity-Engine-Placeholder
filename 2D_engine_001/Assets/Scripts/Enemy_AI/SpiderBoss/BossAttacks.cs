@@ -12,14 +12,16 @@ public class BossAttacks : MonoBehaviour {
 	public int attackLimit;
 	public FireMissiles missileScript;
 	public FireGuns gunScipt;
+	//public SummonSpiders summonScript;
 	public GameObject flameScript;
+	//public Webstick webscript;
+	// Use this for initialization
 	void Start () {
 	
 	}
 	void OnDisable(){
 		missileScript.enabled = false;
 		gunScipt.enabled = false;
-		flameScript.SetActive (false);
 	}
 
 	
@@ -42,7 +44,7 @@ public class BossAttacks : MonoBehaviour {
 					attacking = true;
 					break;
 				case 2: //Ignite Flamethrower
-					attackLimit = 120;
+					attackLimit = 150;
 					attackTimer = 0;
 					flameScript.SetActive (true);
 					attacking = true;
@@ -72,7 +74,7 @@ public class BossAttacks : MonoBehaviour {
 			}
 		} else {
 			counter++;
-			if (counter == 60) {
+			if (counter == 120) {
 				counter = 0;
 				onCoolDown = false;
 			}
