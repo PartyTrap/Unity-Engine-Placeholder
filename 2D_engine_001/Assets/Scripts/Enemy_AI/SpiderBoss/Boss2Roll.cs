@@ -6,12 +6,16 @@ public class Boss2Roll : MonoBehaviour {
 	public bool battleMode = false;
 	public bool delay = false;
 	public int delaycounter;
+	public int spawncount;
 	public int stops;
 	public int counter;
 	public int battleModeTimer = 0;
 	public int battleModeLimit = 100;
 	public BossAttacks attackscript = null;
+	public Collider2D bossCollider;
 	public GameObject player;
+	public GameObject spawner;
+	public GameObject minion;
 	// Use this for initialization
 	void Start () {
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -50);
@@ -40,6 +44,11 @@ public class Boss2Roll : MonoBehaviour {
 						break;
 					}
 					this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -15000);
+					spawncount++;
+					if (spawncount == 2) {
+						spawncount = 0;
+						Instantiate (minion, spawner.transform.position, spawner.transform.rotation);
+					}
 				}
 			}
 			if (this.gameObject.GetComponent<Rigidbody2D> ().isKinematic) {
@@ -56,26 +65,26 @@ public class Boss2Roll : MonoBehaviour {
 					switch (stops) {
 					case 0:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 30000);
 						delay = true;
 						break;
 					case 1:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 30000);
 						delay = true;
 						break;
 					case 2:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 30000);
 						delay = true;
 						break;
 					case 3:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 15000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 22000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 20000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 30000);
 						delay = true;
 						break;
 					}
@@ -117,4 +126,5 @@ public class Boss2Roll : MonoBehaviour {
 
 		}
 	}
+
 }

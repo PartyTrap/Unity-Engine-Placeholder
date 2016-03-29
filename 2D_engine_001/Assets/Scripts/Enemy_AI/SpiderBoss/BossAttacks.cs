@@ -44,7 +44,7 @@ public class BossAttacks : MonoBehaviour {
 					attacking = true;
 					break;
 				case 2: //Ignite Flamethrower
-					attackLimit = 120;
+					attackLimit = 150;
 					attackTimer = 0;
 					flameScript.SetActive (true);
 					attacking = true;
