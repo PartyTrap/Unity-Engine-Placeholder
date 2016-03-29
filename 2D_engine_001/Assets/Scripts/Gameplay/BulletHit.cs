@@ -45,7 +45,11 @@ public class BulletHit : MonoBehaviour
         ES = null;
 	}
 	void OnTriggerEnter2D(Collider2D obj){
+<<<<<<< HEAD
 		if(obj.tag != "Belt" && obj.tag != "Pickup" && obj.tag != "Webs" && obj.tag != "Spikes" && obj.tag != "StopTile" )
+=======
+        if(obj.tag != "Belt" && obj.tag != "Pickup" && obj.tag != "Webs" && obj.tag != "Spikes" && obj.tag != "Environment")
+>>>>>>> refs/remotes/origin/master
 			Destroy(gameObject);
 	}
 }
