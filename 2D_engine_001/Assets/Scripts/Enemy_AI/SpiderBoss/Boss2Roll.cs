@@ -5,6 +5,7 @@ public class Boss2Roll : MonoBehaviour {
 	public bool stop = false;
 	public bool battleMode = false;
 	public bool delay = false;
+	public int summoncounter;
 	public int delaycounter;
 	public int stops;
 	public int counter;
@@ -13,6 +14,8 @@ public class Boss2Roll : MonoBehaviour {
 	public BossAttacks attackscript = null;
 	public Collider2D bossCollider;
 	public GameObject player;
+	public GameObject spawner;
+	public GameObject minions;
 	// Use this for initialization
 	void Start () {
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -50);
@@ -41,6 +44,11 @@ public class Boss2Roll : MonoBehaviour {
 						break;
 					}
 					this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -15000);
+					summoncounter++;
+					if (summoncounter == 2) {
+						summoncounter = 0;
+						Instantiate (minions, spawner.transform.position, spawner.transform.rotation);
+					}
 				}
 			}
 			if (this.gameObject.GetComponent<Rigidbody2D> ().isKinematic) {
@@ -58,25 +66,25 @@ public class Boss2Roll : MonoBehaviour {
 					case 0:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
 						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 20000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 70000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 30000);
 						delay = true;
 						break;
 					case 1:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
 						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.right * 20000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 70000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 30000);
 						delay = true;
 						break;
 					case 2:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
 						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.up * 20000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 70000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 30000);
 						delay = true;
 						break;
 					case 3:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
 						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.left * 20000);
-						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 70000);
+						player.GetComponent<Rigidbody2D> ().AddForce (Vector3.down * 30000);
 						delay = true;
 						break;
 					}

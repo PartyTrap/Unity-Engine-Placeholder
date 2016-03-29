@@ -12,16 +12,14 @@ public class BossAttacks : MonoBehaviour {
 	public int attackLimit;
 	public FireMissiles missileScript;
 	public FireGuns gunScipt;
-	//public SummonSpiders summonScript;
 	public GameObject flameScript;
-	//public Webstick webscript;
-	// Use this for initialization
 	void Start () {
 	
 	}
 	void OnDisable(){
 		missileScript.enabled = false;
 		gunScipt.enabled = false;
+		flameScript.SetActive (false);
 	}
 
 	
@@ -74,7 +72,7 @@ public class BossAttacks : MonoBehaviour {
 			}
 		} else {
 			counter++;
-			if (counter == 120) {
+			if (counter == 60) {
 				counter = 0;
 				onCoolDown = false;
 			}
