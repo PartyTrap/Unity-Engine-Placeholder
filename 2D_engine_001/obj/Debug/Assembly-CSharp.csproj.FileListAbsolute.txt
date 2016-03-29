@@ -40,8 +40,6 @@ C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\D
 C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.dll
 C:\Users\Jack\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.pdb
-C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.dll
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEditor.dll
@@ -60,4 +58,6 @@ C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEditor.xml
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.dll
 C:\Users\neilm\Documents\GitHub\Unity-Engine-Placeholder\2D_engine_001\obj\Debug\Assembly-CSharp.pdb

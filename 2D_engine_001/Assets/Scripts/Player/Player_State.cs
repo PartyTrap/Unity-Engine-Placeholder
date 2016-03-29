@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player_State : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class Player_State : MonoBehaviour {
 	public int resistance = 10;
 	public Animator anim;
 	public Save save;
+	public string level;
 
 	public bool alive = true;
 
@@ -49,6 +51,9 @@ public class Player_State : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 	}
+
+
+
 		
 
 	//Decrease player health 

@@ -86,8 +86,8 @@ public class Boss : MonoBehaviour {
 						b.transform.Translate (new Vector3 (-10, 0, 0));
 						BunnyAI acon = a.GetComponent<BunnyAI> ();
 						BunnyAI bcon = b.GetComponent<BunnyAI> ();
-						acon.player = GameObject.FindWithTag ("Player");
-						bcon.player = GameObject.FindWithTag ("Player");
+						//acon.player = GameObject.FindWithTag ("Player");
+						//bcon.player = GameObject.FindWithTag ("Player");
 						//Make them detect the player wherever he is in the arena
 						acon.viewRange = 100; 
 						bcon.viewRange = 100;

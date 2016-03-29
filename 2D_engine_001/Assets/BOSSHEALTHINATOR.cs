@@ -14,6 +14,6 @@ public class BOSSHEALTHINATOR : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Health.text = "Boss Health : " + ES.enemyHealth;
+        Health.text = ES.enemyHealth.ToString();
 	}
 }
