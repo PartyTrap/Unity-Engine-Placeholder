@@ -20,6 +20,7 @@ public class BulletHit : MonoBehaviour
 	//on collision destroy the bullet Clone
 	void OnCollisionEnter2D(Collision2D OnHit)
 	{
+		
         if (OnHit.gameObject.tag == "Pickup")
         {
             Physics2D.IgnoreCollision(OnHit.collider, this.gameObject.GetComponent<Collider2D>());
@@ -45,7 +46,7 @@ public class BulletHit : MonoBehaviour
         ES = null;
 	}
 	void OnTriggerEnter2D(Collider2D obj){
-		if(obj.tag != "Belt" && obj.tag != "Pickup" && obj.tag != "Webs" && obj.tag != "Spikes" && obj.tag != "StopTile" ){
+		if(obj.tag != "Belt" && obj.tag != "Pickup" && obj.tag != "Webs" && obj.tag != "Spikes" && obj.tag != "StopTile" && obj.tag != "Fire"){
 			Destroy(gameObject);
 		}
 	}

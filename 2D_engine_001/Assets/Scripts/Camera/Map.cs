@@ -34,7 +34,7 @@ public class Map : MonoBehaviour {
 
         this.transform.position = new Vector3 (10,-32,-45);
 		zoomed = true;
-		pause ();
+		//pause ();
 
     }
 

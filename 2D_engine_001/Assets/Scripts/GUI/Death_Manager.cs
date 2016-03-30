@@ -12,13 +12,13 @@ public class Death_Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		PS = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player_State>();
 		}
 	
 	// Update is called once per frame
 	 void Update ()
 	{
-		if (PS.curHealth <= 0) {
+		if (PS.playerHealth <= 0) {
 			SceneManager.LoadScene(level);
 
 		

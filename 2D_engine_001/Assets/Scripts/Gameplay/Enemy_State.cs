@@ -20,8 +20,7 @@ public class Enemy_State : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (this.gameObject.tag == "Boss") {
-			enemyHealth = 2000;
-			resistance = 5;
+			
 		} else {
 			enemyHealth = 100;
 		}
@@ -65,6 +64,7 @@ public class Enemy_State : MonoBehaviour {
 		//Destroy Enemy upon its HP reaching 0 or below
 		if (enemyHealth <= 0) {
 			if (this.gameObject.tag == "Boss") {
+				enemyHealth = 0;
 				Destroy (boss);
 			}
 			//If obj is mommaSpider, spawn spider JRs on death
@@ -78,7 +78,7 @@ public class Enemy_State : MonoBehaviour {
 				spiPosY += 0.5f;
 
 				spider2 = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
-				float spi2PosY = spider.transform.position.y;
+				float spi2PosY = spider2.transform.position.y;
 				spi2PosY -= 0.5f;
 
 				GameObject explosionObject = Instantiate(this.spiderDeathPF) as GameObject;
@@ -97,11 +97,11 @@ public class Enemy_State : MonoBehaviour {
 			}
 			//At Quarter HP
 			if (enemyHealth < 501) {
-				resistance = 10;
+				//resistance = 10;
 			}
 			//At Critical Condition 
 			if (enemyHealth < 200) {
-				resistance = 15;
+				//resistance = 15;
 			}
 		}
 	}

@@ -19,6 +19,18 @@ public class Scene_Transition : MonoBehaviour {
 
 		Debug.Log ("Level Load");
 		if (col.tag == "Player")
-			SceneManager.LoadScene (level);
+			LoadLevel ();
+	}
+
+	public void LoadLevel(){
+
+		SceneManager.LoadScene (level);
+
+	}
+
+	public void setLevel(string lvl){
+
+		level = lvl;
+
 	}
 }

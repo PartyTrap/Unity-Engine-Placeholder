@@ -22,7 +22,7 @@ public class EnemyHealthManager : MonoBehaviour {
 		if (ES.enemyHealth <= 0 )
 		{
 			Delete_UI ();
-			Destroy (this.GetComponentInParent<GameObject>().GetComponentInParent<GameObject>());
+			//Destroy (this.gameObject.GetComponentInParent<GameObject>());
 		}
 	}
 	public void Delete_UI(){
