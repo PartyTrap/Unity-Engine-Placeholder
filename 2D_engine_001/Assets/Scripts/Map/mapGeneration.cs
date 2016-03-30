@@ -17,11 +17,26 @@ public class mapGeneration : MonoBehaviour {
     public GameObject Web;
 	private int[,] map;
 
+    public int level;
 
 	// Use this for initialization
 	void Start () {
 
-		map = Level1.map;
+        switch (level)
+        {
+            case 0:
+                this.map = Level1.map;
+                break;
+            case 1:
+                this.map = Level2.map;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+
+        }
+                
 
 		//Put things in the map
 		for (int y = 0; y < mapWidth; y++) {

@@ -32,7 +32,7 @@ public class Map : MonoBehaviour {
 
    public void Zoom(){
 
-        this.transform.position = new Vector3 (10,-32,-45);
+        this.transform.position = new Vector3 (10,-25,-50);
 		zoomed = true;
 		//pause ();
 
