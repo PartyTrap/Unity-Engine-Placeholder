@@ -25,12 +25,13 @@ public class mapGeneration : MonoBehaviour {
         switch (level)
         {
             case 0:
-                this.map = Level1.map;
+                this.map = Level0.map;
                 break;
             case 1:
-                this.map = Level2.map;
+                this.map = Level1.map;
                 break;
             case 2:
+                this.map = Level2.map;
                 break;
             case 3:
                 break;

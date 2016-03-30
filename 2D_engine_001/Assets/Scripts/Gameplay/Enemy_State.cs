@@ -9,9 +9,10 @@ public class Enemy_State : MonoBehaviour {
 	public int enemyHealth;
 	public GameObject boss;
     public GameObject health;
-    public int max = 1;
+    public int DropChance = 1;
 	public int resistance = 10;
 	public float knockBack = 100.0f;
+    public float max;
 
 	//Spiderling jr PF spawn & mommaspider death anim pf
 	public GameObject spiderlingJR;
@@ -23,6 +24,7 @@ public class Enemy_State : MonoBehaviour {
 			
 		} else {
 			enemyHealth = 100;
+            max = enemyHealth;
 		}
 	}
 
@@ -109,7 +111,7 @@ public class Enemy_State : MonoBehaviour {
     private void DestroyMe(){
 
         Destroy(this.gameObject);
-        int rand = Random.Range(1, max);
+        int rand = Random.Range(1, DropChance);
         if (rand == 1)
         {
             GameObject clone;

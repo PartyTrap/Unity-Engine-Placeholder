@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossState : MonoBehaviour {
+public class BossState : Enemy_State {
 	public int bossHealth = 5000;
 	public int resistance;
 	public int damageTaken;
 	// Use this for initialization
 	void Start () {
-		resistance = 5;
+		resistance = 25;
+        max = bossHealth;
 	}
 	
 	// Update is called once per frame
@@ -18,6 +19,8 @@ public class BossState : MonoBehaviour {
 		if (bossHealth < 1250) {
 			resistance = 0;
 		}
+        enemyHealth = bossHealth;
+       
 	}
 	void OnCollisionEnter2D(Collision2D c ){
 		if (c.gameObject.tag == "Bullet") {

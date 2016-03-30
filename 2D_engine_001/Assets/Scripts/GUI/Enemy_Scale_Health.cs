@@ -14,14 +14,13 @@ public class Enemy_Scale_Health : MonoBehaviour {
 	void Start () {
 		RT = this.GetComponent<RectTransform> ();
 		max = ES.enemyHealth;
-
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		ratio = ES.enemyHealth / max;
+		ratio = ES.enemyHealth / ES.max;
 		Debug.Log (ratio);
 		RT.localScale = new Vector3(ratio,1 ,1);
 

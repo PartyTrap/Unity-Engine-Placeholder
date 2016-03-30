@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyHealthManager : MonoBehaviour {
 
 	public Enemy_State ES;
+    public BossState BS;
 	public GameObject E;
 
 
@@ -15,7 +16,6 @@ public class EnemyHealthManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		this.transform.eulerAngles = new Vector3 (0, 180, 0);
 		this.transform.position = E.transform.position;
 		this.transform.position += new Vector3(0,1.0f,0);
