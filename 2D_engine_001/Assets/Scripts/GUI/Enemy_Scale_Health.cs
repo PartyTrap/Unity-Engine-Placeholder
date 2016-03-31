@@ -20,7 +20,7 @@ public class Enemy_Scale_Health : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		ratio = ES.enemyHealth / ES.max;
+		ratio = ES.enemyHealth / max;
 		Debug.Log (ratio);
 		RT.localScale = new Vector3(ratio,1 ,1);
 

@@ -15,6 +15,7 @@ public class Player_State : MonoBehaviour {
 	public Animator anim;
 	public Save save;
 	public string level;
+    [SerializeField] private AudioManager audio;
 
 	public bool alive = true;
 
@@ -23,6 +24,7 @@ public class Player_State : MonoBehaviour {
 	void Start () {
 
 		Debug.Log ("Start:");
+        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		save = GameObject.FindGameObjectWithTag ("Save").GetComponent<Save> ();
 		playerHealth = save.health;
 		curHealth = playerHealth;
@@ -62,6 +64,8 @@ public class Player_State : MonoBehaviour {
 		anim.SetTrigger ("Hit");
 		float healthLoss = curHealth / playerHealth;
 		setHealthBar(healthLoss);
+        audio.PlayPlayerDmgClip();
+
 	}
 	//Decrease HealthBar
 	public void setHealthBar (float myHealth)

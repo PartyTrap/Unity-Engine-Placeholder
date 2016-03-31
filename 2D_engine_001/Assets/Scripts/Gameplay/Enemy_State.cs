@@ -13,6 +13,8 @@ public class Enemy_State : MonoBehaviour {
 	public int resistance = 10;
 	public float knockBack = 100.0f;
     public float max;
+    [SerializeField]private AudioManager audio;
+
 
 	//Spiderling jr PF spawn & mommaspider death anim pf
 	public GameObject spiderlingJR;
@@ -20,6 +22,7 @@ public class Enemy_State : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 		if (this.gameObject.tag == "Boss") {
 			
 		} else {
@@ -110,6 +113,7 @@ public class Enemy_State : MonoBehaviour {
 
     private void DestroyMe(){
 
+        audio.PlayEnemyDeathClip();
         Destroy(this.gameObject);
         int rand = Random.Range(1, DropChance);
         if (rand == 1)
