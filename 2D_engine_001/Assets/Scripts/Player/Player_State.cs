@@ -14,7 +14,6 @@ public class Player_State : MonoBehaviour {
 	public int resistance = 10;
 	public Animator anim;
 	public Save save;
-	public string level;
     [SerializeField] private AudioManager audio;
 
 	public bool alive = true;
@@ -50,7 +49,6 @@ public class Player_State : MonoBehaviour {
 		}
 		if (playerHealth <= 0) {
 			alive = false;
-			Destroy (this.gameObject);
 		}
 	}
 
