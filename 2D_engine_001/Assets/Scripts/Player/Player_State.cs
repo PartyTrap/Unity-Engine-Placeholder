@@ -30,7 +30,6 @@ public class Player_State : MonoBehaviour {
 		curHealth = playerHealth;
 
 		anim = this.GetComponent<Animator> ();
-		//InvokeRepeating ("looseHealth", 1f, 1f);
 	}
 
 
@@ -41,13 +40,19 @@ public class Player_State : MonoBehaviour {
         if (playerHealth > maxHealth)
         {
             playerHealth = maxHealth;
+            curHealth = maxHealth;
         }
 		if (playerHealth < curHealth )
 		{
-			
+			//lost health
 			looseHealth();
 			curHealth = playerHealth;
 		}
+        if (playerHealth > curHealth)
+        {
+            //gained health
+            curHealth = playerHealth;
+        }
 		if (playerHealth <= 0) {
 			alive = false;
 			Destroy (this.gameObject);
@@ -58,21 +63,20 @@ public class Player_State : MonoBehaviour {
 
 		
 
-	//Decrease player health 
+    //Active any triggers associated with lossing health;
 	void looseHealth() 
 	{
 		anim.SetTrigger ("Hit");
-		float healthLoss = curHealth / playerHealth;
-		setHealthBar(healthLoss);
         audio.PlayPlayerDmgClip();
 
 	}
-	//Decrease HealthBar
-	public void setHealthBar (float myHealth)
-	{
-		//myHealth value is from 0-1..
-		HealthBar.transform.localScale = new Vector3(myHealth, HealthBar.transform.localScale.y, HealthBar.transform.localScale.z);
-	}
+	
+
+    void gainHealth()
+    {
+        //play heal anim,
+        //play heal audio
+    }
 
 
 }

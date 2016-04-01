@@ -20,6 +20,7 @@ public class Health_Pickup : MonoBehaviour {
         Debug.Log("Health Up");
         if (other.gameObject.tag == "Player")
         {
+            //PS.curHealth += health_up;
             PS.playerHealth += health_up;
             DestroyMe();
         }
