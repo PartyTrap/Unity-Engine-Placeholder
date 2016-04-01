@@ -5,6 +5,7 @@ public class Save : MonoBehaviour {
 
 	public Player_State PS;
 	public float health;
+    public string levelName;
 
 	// Use this for initialization
 	void Start () {
