@@ -13,7 +13,7 @@ public class Player_Dash : MonoBehaviour {
 	public float distance;
 	// Use this for initialization
 	void Start () {
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("PlayerAudioManager").GetComponent<AudioManager>();
 		rb = this.GetComponent<Rigidbody2D> ();
         stamina = cooldown;
 	}
