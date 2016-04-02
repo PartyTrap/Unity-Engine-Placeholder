@@ -13,7 +13,7 @@ public class Enemy_State : MonoBehaviour {
 	public int resistance = 10;
 	public float knockBack = 100.0f;
     public float max;
-    [SerializeField]private AudioManager audio;
+    [SerializeField]private EnviroAudioManager audio;
 
 
 	//Spiderling jr PF spawn & mommaspider death anim pf
@@ -22,7 +22,7 @@ public class Enemy_State : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("EnviroAudioManager").GetComponent<EnviroAudioManager>();
 		if (this.gameObject.tag == "Boss") {
 			
 		} else {

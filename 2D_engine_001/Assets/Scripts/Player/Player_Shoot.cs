@@ -8,7 +8,7 @@ public class Player_Shoot : MonoBehaviour {
     [SerializeField]private AudioManager audio;
 	// Use this for initialization
 	void Start () {
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("PlayerAudioManager").GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame

@@ -23,7 +23,7 @@ public class Player_State : MonoBehaviour {
 	void Start () {
 
 		Debug.Log ("Start:");
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("PlayerAudioManager").GetComponent<AudioManager>();
 		save = GameObject.FindGameObjectWithTag ("Save").GetComponent<Save> ();
 		playerHealth = save.health;
 		curHealth = playerHealth;

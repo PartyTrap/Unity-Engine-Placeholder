@@ -14,7 +14,7 @@ public class StalkerAI : MonoBehaviour {
 	private float z;
 	public int frameCounter;
 	public bulletSpawn BS;
-    [SerializeField] private AudioManager audio;
+    [SerializeField] private EnemyAudioManager audio;
 
 	public int dmg = 35;
 
@@ -24,7 +24,7 @@ public class StalkerAI : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.FindWithTag ("Player");
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("EnemyAudioManager").GetComponent<EnemyAudioManager>();
 		frameCounter = 0;
 		shootRange = distanceMax + 1;
 	}
