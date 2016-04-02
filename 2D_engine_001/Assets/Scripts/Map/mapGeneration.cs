@@ -33,8 +33,12 @@ public class mapGeneration : MonoBehaviour {
             case 2:
                 this.map = Level2.map;
                 break;
-            case 3:
+			case 3:
+				this.map = Level3.map;
                 break;
+			case 4:
+				this.map = Level4.map;
+				break;
 
         }
                 
