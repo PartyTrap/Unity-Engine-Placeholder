@@ -20,7 +20,7 @@ public class EnemyHealthManager : MonoBehaviour {
 		this.transform.eulerAngles = new Vector3 (0, 180, 0);
 		this.transform.position = E.transform.position;
 		this.transform.position += new Vector3(0,1.0f,0);
-		if (ES.enemyHealth <= 0 )
+		if (BS.bossHealth <= 0 )
 		{
             
 			Delete_UI ();
