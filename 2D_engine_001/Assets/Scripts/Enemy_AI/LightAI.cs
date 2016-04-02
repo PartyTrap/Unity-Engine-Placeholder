@@ -30,6 +30,8 @@ public class LightAI : MonoBehaviour {
 	void Start () {
 		frameCounter = 0;
 
+		player = GameObject.FindGameObjectWithTag ("Player");
+
 		rb = GetComponent<Rigidbody2D> ();
 	}
 	
@@ -71,11 +73,16 @@ public class LightAI : MonoBehaviour {
 			}
 
 		} else if (shadow != null) {
+
+			transform.LookAt (shadow.transform.position);
 		
 			pointx = Random.value * Random.Range (-2.0f, 2.0f);
 			pointy = Random.value * Random.Range (-2.0f, 2.0f);
 			Vector2 velocity = new Vector2 ((transform.position.x - (shadow.transform.position.x + pointx)) * speed, (transform.position.y - shadow.transform.position.y + pointy) * speed);
 			rb.AddForce (-velocity, ForceMode2D.Force);
+
+			z = Mathf.Atan2 ((shadow.transform.position.y - transform.position.y), (shadow.transform.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
+			transform.eulerAngles = new Vector3 (0f, 0f, z);
 		} 
 
 		else {
@@ -91,7 +98,8 @@ public class LightAI : MonoBehaviour {
 			if (frameCounter >= fireDelay && playerDistance <= shootRange) {
 				frameCounter = 0;
 				BS.fireBullet (dmg);
-			} else {
+			} 
+			else {
 				frameCounter++;
 			}
 
