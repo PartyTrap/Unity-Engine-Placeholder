@@ -17,6 +17,7 @@ public class SpiderlingAI : MonoBehaviour {
 	private Player_State PS;
 
 	public float frameCounter;
+	public float kb;
 
 
 	void Start () 
@@ -59,15 +60,28 @@ public class SpiderlingAI : MonoBehaviour {
 	{
 		if (OnHit.gameObject.tag == "Player") 
 		{
+			if(OnHit.transform.position.x < this.transform.position.x )
+			{
+				this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (kb, 0f);
+			}
+
+			if(OnHit.transform.position.x > this.transform.position.x )
+			{
+				this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-kb, 0f);
+			}
+
+			if(OnHit.transform.position.y < this.transform.position.y )
+			{
+				this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0f, -kb);
+			}
+
+			if(OnHit.transform.position.y < this.transform.position.y )
+			{
+				this.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0f, kb);
+			}
+
 			PS.playerHealth -= damage - PS.resistance;
 			frameCounter = moveTime;
-
-			Vector2 kb = new Vector2 ((this.transform.position.x - (Player.gameObject.transform.position.x + 1.0f)), (this.transform.position.y - (Player.gameObject.transform.position.y + 1.0f)));
-			kb.Normalize ();
-			kb.Scale (new Vector2 (500.0f, 500.0f));
-
-			this.GetComponent<Rigidbody2D>().AddForce (kb * -1.0f);
-			Debug.Log (kb);
 		}
 	}
 }
