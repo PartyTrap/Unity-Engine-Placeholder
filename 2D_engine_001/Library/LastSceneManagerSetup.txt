@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Scenes/Ranged/Ranged_Boss_Battle2.unity
+  isLoaded: 1
+  isActive: 1
