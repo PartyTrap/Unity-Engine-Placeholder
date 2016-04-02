@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour {
 	public GameObject Player = null;
 	public GameObject crater = null;
 	public GameObject minion = null;
+	public Vinepull vine;
 	public Player_State BossDamage = null;
 	public bool BossAttackDecision = false;
 	public bool JustAttacked = false;
@@ -44,7 +45,12 @@ public class Boss : MonoBehaviour {
 				case 0: //SmashAttack;
 					CurrentAttackLimit = 300;
 					CurrentAttackTimer++;
-
+					if (CurrentAttackTimer < 240) {
+						vine.enabled = true;
+					}
+					if (CurrentAttackTimer == 240) {
+						vine.enabled = false;
+					}
 					if (CurrentAttackTimer == CurrentAttackLimit) {
 						Instantiate (crater, this.transform.position, this.transform.rotation);
 						if (DamageZone.IsTouching (Player.GetComponent<BoxCollider2D> ())) {
