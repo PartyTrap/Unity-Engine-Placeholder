@@ -8,6 +8,8 @@ public class Revive : MonoBehaviour {
 	void OnEnable(){
 		dark.GetComponent<DarkVestige> ().HealDamage (2000.0f);
 		light.GetComponent<LightVestige> ().HealDamage (2000.0F);
+		dark.SetActive (true);
+		light.SetActive (true);
 		//Play animation
 	}
 }

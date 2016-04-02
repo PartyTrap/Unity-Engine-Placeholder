@@ -66,11 +66,18 @@ public class Enemy_State : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (enemyHealth > 0) {
+			this.gameObject.SetActive (true);
+		}
 		//Destroy Enemy upon its HP reaching 0 or below
 		if (enemyHealth <= 0) {
 			if (this.gameObject.tag == "Boss") {
 				enemyHealth = 0;
 				Destroy (boss);
+			}
+			if (this.gameObject.tag == "Vestige") {
+				enemyHealth = 0;
+				this.gameObject.SetActive (false);
 			}
 			//If obj is mommaSpider, spawn spider JRs on death
 			if (this.gameObject.tag == "MommaSpider") 

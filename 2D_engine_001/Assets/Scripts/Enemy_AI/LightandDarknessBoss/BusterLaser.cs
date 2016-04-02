@@ -18,4 +18,11 @@ public class BusterLaser : MonoBehaviour {
 			}
 		}
 	}
+	void OnTriggerEnter2D(Collider2D c){
+		if (active) {
+			if (c.gameObject.tag == "Player") {
+				c.gameObject.GetComponent<Player_State> ().playerHealth -= 30;
+			}
+		}
+	}
 }

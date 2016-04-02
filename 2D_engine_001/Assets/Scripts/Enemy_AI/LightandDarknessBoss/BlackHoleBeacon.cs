@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Beacon : MonoBehaviour {
+public class BlackHoleBeacon : MonoBehaviour {
 	private int counter;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		counter++;
@@ -16,7 +16,7 @@ public class Beacon : MonoBehaviour {
 		}
 	}
 	void OnCollisionEnter2D(Collision2D c){
-		if (c.gameObject.tag == "Missile") {
+		if (c.gameObject.tag == "BlackHole") {
 			Destroy (this.gameObject);
 		}
 	}

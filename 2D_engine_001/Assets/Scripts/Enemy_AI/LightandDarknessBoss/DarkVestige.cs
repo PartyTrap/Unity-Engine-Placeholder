@@ -14,10 +14,6 @@ public class DarkVestige : Enemy_State {
 		} else {
 			isAlive = true;
 		}
-		if (isAlive) {
-			//Conduct Attacks
-
-		}
 	}
 	public void TakeDamage(float damage){
 		float netDamage = damage - VestigeResistance;
@@ -32,5 +28,10 @@ public class DarkVestige : Enemy_State {
 			VestigeHealth = 2000;
 		}
 		enemyHealth = Mathf.FloorToInt(VestigeHealth);
+	}
+	void OnCollisionEnter2D(Collider2D c){
+		if (c.gameObject.tag == "Bullet") {
+			TakeDamage ((float)c.gameObject.GetComponent<Player_State> ().dmg);
+		}
 	}
 }
