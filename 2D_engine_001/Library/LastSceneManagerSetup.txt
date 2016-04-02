@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Ranged/Ranged_Scene_04.unity
+- path: Assets/Scenes/Ranged/Ranged_Intro.unity
   isLoaded: 1
   isActive: 1
