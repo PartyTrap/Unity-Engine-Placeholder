@@ -16,14 +16,14 @@ public class BunnyAI : MonoBehaviour
 	private float frameCounter;
 	private float playerDistance;
 	public GameObject player;
+	private BulletSpawnEnemy BS;
 
 	public int dmg = 35;
-
-	public bulletSpawn BS;
 
 	void Start () 
 	{
 		player = GameObject.FindWithTag ("Player");
+		BS = this.GetComponent<BulletSpawnEnemy> ();
 		xStartPosition = transform.position.x;
 		frameCounter = 0;
 	}
@@ -45,7 +45,7 @@ public class BunnyAI : MonoBehaviour
 			if (frameCounter >= fireDelay && playerDistance <= shootRange) 
 			{
 				frameCounter = 0;
-				BS.fireBullet (dmg);
+				BS.fireEnemyBullet (dmg);
 			} 
 
 			else 
