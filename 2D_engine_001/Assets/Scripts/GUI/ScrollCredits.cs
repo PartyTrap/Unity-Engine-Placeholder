@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ScrollCredits : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class ScrollCredits : MonoBehaviour {
 	private TextMesh c;
 	public GameObject thanks;
 	public GameObject pos;
+	public string scene;
 
 	void Start () 
 	{
@@ -27,6 +29,8 @@ public class ScrollCredits : MonoBehaviour {
 			{
 				GameObject thanksss;
 				thanksss = (Instantiate(thanks, pos.transform.position, pos.transform.rotation))as GameObject;
+				SceneManager.LoadScene (scene);
+
 			}
 		}
 	}
