@@ -4,15 +4,14 @@ using System.Collections;
 public class EnemyAITest : MonoBehaviour 
 {
 	private Transform player;
-	public GameObject bulletPrefab;
 
-	public bulletSpawn BS;
+	private BulletSpawnEnemy BS;
 
 	public float viewRange;
-	private float playerDistance;
 	public int frameCounter;
 	public float fireDelay;
-	public float bulletSpeed; 
+	public float bulletSpeed;
+	private float playerDistance;
 	private float z;
 
 	public int dmg = 35;
@@ -22,6 +21,7 @@ public class EnemyAITest : MonoBehaviour
 	{
 		player = GameObject.FindWithTag ("Player").GetComponent<Transform>();
 		frameCounter = 0;
+		BS = this.GetComponent<BulletSpawnEnemy> ();
 	}
 
 	void Update()
@@ -30,14 +30,14 @@ public class EnemyAITest : MonoBehaviour
 		if (frameCounter >= fireDelay && playerDistance <= viewRange) 
 		{
 			frameCounter = 0;
-			BS.fireBullet (dmg);
+			BS.fireEnemyBullet(dmg);
+			Debug.Log ("should be firing");
 		} 
 
 		else 
 		{
 			frameCounter++;
 		}
-			
 	}
 
 	void FixedUpdate () 
@@ -51,18 +51,4 @@ public class EnemyAITest : MonoBehaviour
 
 		}
 	}
-
-
-
-	/*void fireBullet()
-	{
-		//Instanstiate bulletPF clone, add force, ignore collision between other bullet's and the enemy firing them
-		GameObject Clone;
-
-		Clone = (Instantiate (bulletPrefab, transform.position, transform.rotation))as GameObject;
-		Physics2D.IgnoreCollision (Clone.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
-
-		Clone.GetComponent<Rigidbody2D>().AddForce (transform.up * bulletSpeed * 100.0f);
-	}
-	*/
 }
