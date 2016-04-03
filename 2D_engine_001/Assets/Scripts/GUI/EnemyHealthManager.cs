@@ -23,7 +23,7 @@ public class EnemyHealthManager : MonoBehaviour {
 		if (BS.bossHealth <= 0 )
 		{
             
-			Delete_UI ();
+			//Delete_UI ();
 			//Destroy (this.gameObject.GetComponentInParent<GameObject>());
 		}
 	}
