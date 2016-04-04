@@ -25,12 +25,13 @@ public class ScrollCredits : MonoBehaviour {
 		{
 			this.GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
 			c.text = "";
+
 			if (GameObject.Find ("Thanks(Clone)") == null) 
 			{
 				GameObject thanksss;
 				thanksss = (Instantiate(thanks, pos.transform.position, pos.transform.rotation))as GameObject;
-				SceneManager.LoadScene (scene);
 
+				StartCoroutine(LoadScene());
 			}
 		}
 	}
@@ -66,6 +67,13 @@ public class ScrollCredits : MonoBehaviour {
 
 		yield return new WaitForSeconds (1.0f);
 		this.GetComponent<Rigidbody2D> ().AddForce(Vector2.up * speed);
+	}
+
+	IEnumerator LoadScene()
+	{
+		
+		yield return new WaitForSeconds (3.0f);
+		SceneManager.LoadScene (scene);
 	}
 
 }
