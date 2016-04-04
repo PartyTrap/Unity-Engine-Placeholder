@@ -34,10 +34,10 @@ public class Player_Dash : MonoBehaviour {
         audio.PlayPlayerDashClip();
         active = 0;
         stamina = 0;
-        for (float x = 0; x < cooldown; x = x + 0.01f)
+        for (float x = 0; x < cooldown; x = x + 0.1f)
         {
-            yield return new WaitForSeconds(0.01f);
-            stamina = stamina + 0.01f;
+            yield return new WaitForSeconds(0.1f);
+            stamina = stamina + 0.1f;
         }
         active = 1;
     }

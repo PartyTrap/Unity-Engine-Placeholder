@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BOSSHEALTHINATOR : MonoBehaviour {
 
-    public BossState ES;
+    public Enemy_State ES;
 	private Text Health;
 
 	// Use this for initialization
@@ -14,6 +14,6 @@ public class BOSSHEALTHINATOR : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Health.text = ES.bossHealth.ToString();
+        Health.text = ES.enemyHealth.ToString();
 	}
 }
