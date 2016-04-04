@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BossCore : Enemy_State{
-	[SerializeField] private float VestigeHealth = 8000;
+	public float VestigeHealth = 8000;
 	[SerializeField] private float VestigeResistance = 5;
 	[SerializeField] private bool isAlive = true;
 	// Update is called once per frame

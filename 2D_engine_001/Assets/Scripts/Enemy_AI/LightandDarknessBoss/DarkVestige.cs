@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class DarkVestige : Enemy_State {
-	[SerializeField] private float VestigeHealth = 2000;
+	public float VestigeHealth = 2000;
 	[SerializeField] private float VestigeResistance = 5;
 	[SerializeField] private bool isAlive = true;
 	// Update is called once per frame
@@ -31,7 +31,7 @@ public class DarkVestige : Enemy_State {
 	}
 	void OnCollisionEnter2D(Collider2D c){
 		if (c.gameObject.tag == "Bullet") {
-			TakeDamage ((float)c.gameObject.GetComponent<Player_State> ().dmg);
+			TakeDamage (c.gameObject.GetComponent<Player_State> ().dmg);
 		}
 	}
 }

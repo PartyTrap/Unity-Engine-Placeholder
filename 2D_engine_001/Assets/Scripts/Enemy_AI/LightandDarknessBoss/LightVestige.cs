@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class LightVestige : Enemy_State {
-	[SerializeField] private float VestigeHealth = 2000;
+	public float VestigeHealth = 2000;
 	[SerializeField] private float VestigeResistance = 5;
 	[SerializeField] private bool isAlive = true;
 	// Update is called once per frame
