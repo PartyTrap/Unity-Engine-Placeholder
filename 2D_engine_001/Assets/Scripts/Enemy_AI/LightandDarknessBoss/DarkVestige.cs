@@ -2,17 +2,22 @@
 using System.Collections;
 
 public class DarkVestige : Enemy_State {
-	[SerializeField] private float VestigeHealth = 2000;
+	public float VestigeHealth = 2000;
 	[SerializeField] private float VestigeResistance = 5;
-	[SerializeField] private bool isAlive = true;
+	[SerializeField] public bool isAlive = true;
 	// Update is called once per frame
+	void Start(){
+		enemyHealth = Mathf.FloorToInt(VestigeHealth);
+	}
 	void Update () {
 		enemyHealth = Mathf.FloorToInt(VestigeHealth);
 		//Check if Dark Vestige is Dead
 		if (VestigeHealth <= 0) {
 			isAlive = false;
+			this.gameObject.GetComponent<DarkVestigeAttacks> ().enabled = false;
 		} else {
 			isAlive = true;
+			this.gameObject.GetComponent<DarkVestigeAttacks> ().enabled = true;
 		}
 	}
 	public void TakeDamage(float damage){
@@ -29,9 +34,9 @@ public class DarkVestige : Enemy_State {
 		}
 		enemyHealth = Mathf.FloorToInt(VestigeHealth);
 	}
-	void OnCollisionEnter2D(Collider2D c){
+	void OnCollisionEnter2D(Collision2D c){
 		if (c.gameObject.tag == "Bullet") {
-			TakeDamage ((float)c.gameObject.GetComponent<Player_State> ().dmg);
+			TakeDamage (c.gameObject.GetComponent<BulletHit> ().dmg);
 		}
 	}
 }

@@ -24,6 +24,7 @@ public class Scene_Transition : MonoBehaviour {
 
 	public void LoadLevel(){
 
+        PlayerData.Instance.Level = level;
 		SceneManager.LoadScene (level);
 
 	}

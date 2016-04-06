@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/Ranged/Ranged_Boss_Battle2.unity
-=======
-- path: Assets/Scenes/Ranged/Ranged_Boss_Battle.unity
->>>>>>> origin/master
-=======
-- path: Assets/Scenes/Ranged/Ranged_Scene_08.unity
->>>>>>> origin/master
+- path: Assets/Scenes/Ranged/Ranged_Boss_Battle3.unity
   isLoaded: 1
   isActive: 1

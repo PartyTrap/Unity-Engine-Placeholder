@@ -16,7 +16,7 @@ public class LightAI : MonoBehaviour {
 
 	public int dmg = 35;
 
-	public bulletSpawn BS;
+	private BulletSpawnEnemy BS;
 
 	private float m;
 	private float b;
@@ -31,6 +31,7 @@ public class LightAI : MonoBehaviour {
 		frameCounter = 0;
 
 		player = GameObject.FindGameObjectWithTag ("Player");
+		BS = this.GetComponent<BulletSpawnEnemy> ();
 
 		rb = GetComponent<Rigidbody2D> ();
 	}
@@ -67,7 +68,7 @@ public class LightAI : MonoBehaviour {
 
 			if (frameCounter >= fireDelay && playerDistance <= shootRange) {
 				frameCounter = 0;
-				BS.fireBullet (dmg);
+				BS.fireEnemyBullet (dmg);
 			} else {
 				frameCounter++;
 			}
@@ -97,7 +98,7 @@ public class LightAI : MonoBehaviour {
 
 			if (frameCounter >= fireDelay && playerDistance <= shootRange) {
 				frameCounter = 0;
-				BS.fireBullet (dmg);
+				BS.fireEnemyBullet (dmg);
 			} 
 			else {
 				frameCounter++;

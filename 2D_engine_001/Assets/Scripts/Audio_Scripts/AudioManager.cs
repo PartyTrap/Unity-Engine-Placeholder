@@ -11,10 +11,6 @@ public class AudioManager : MonoBehaviour
 	[SerializeField] private AudioClip PlayerDashClip = null;
 	[SerializeField] private AudioClip PlayerSound1 = null;
 	[SerializeField] private AudioClip PlayerSound2 = null;
-    [SerializeField] private AudioClip BunnyClip = null;
-    [SerializeField] private AudioClip EnemyClip = null;
-    [SerializeField] private AudioClip StalkerClip = null;
-    [SerializeField] private AudioClip EnemyDeathClip = null;
    
 
 	private List<AudioSource> sources = new List<AudioSource>();
@@ -87,26 +83,6 @@ public class AudioManager : MonoBehaviour
 	{
         PlaySound(this.PlayerSound1);
 	}
-
-    public void PlayBunnyClip ()
-    {
-        PlaySound(this.BunnyClip);
-    }
-
-    public void PlayEnemyClip ()
-    {
-        PlaySound(this.EnemyClip);
-    }
-
-    public void PlayEnemyDeathClip ()
-    {
-        PlaySound(this.EnemyDeathClip);
-    }
-
-    public void PlayStalkerClip ()
-    {
-        PlaySound(this.StalkerClip);
-    }
 
 	private void PlaySound (AudioClip clip)
 	{

@@ -7,7 +7,6 @@ public class Vinepull : MonoBehaviour {
 	[SerializeField] private Material vinemat;
 	// Use this for initialization
 	void OnEnable(){
-		vine.sortingLayerID = 4;
 		vine.sortingOrder = 0;
 		vine.SetWidth (0.5f, 0.5f);
 		vine.SetColors (Color.green, Color.green);
@@ -19,7 +18,7 @@ public class Vinepull : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		vine.SetPosition (1, player.transform.position);
-		player.GetComponent<Rigidbody2D> ().AddForce ((player.transform.position - this.gameObject.transform.position).normalized * -350);
+		player.GetComponent<Rigidbody2D> ().AddForce ((player.transform.position - this.gameObject.transform.position).normalized * -500);
 	}
 	void OnDisable(){
 		vine.enabled = false;

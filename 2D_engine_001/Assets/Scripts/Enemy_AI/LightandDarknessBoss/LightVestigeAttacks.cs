@@ -8,7 +8,7 @@ public class LightVestigeAttacks : MonoBehaviour {
 	[SerializeField] private Disrupt disruption;
 	[SerializeField] private BossMove move;
 	[SerializeField] private int acooldown = 300;
-	[SerializeField] private int dcooldown = 240;
+	[SerializeField] private int dcooldown = 600;
 	[SerializeField] private DarkVestige dv;
 	public List<int> bossattacks = new List<int>(); 
 	// Update is called once per frame

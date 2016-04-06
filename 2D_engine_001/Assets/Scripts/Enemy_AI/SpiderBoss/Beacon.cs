@@ -11,7 +11,7 @@ public class Beacon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		counter++;
-		if (counter == 180) {
+		if (counter == 60) {
 			Destroy (this.gameObject);
 		}
 	}

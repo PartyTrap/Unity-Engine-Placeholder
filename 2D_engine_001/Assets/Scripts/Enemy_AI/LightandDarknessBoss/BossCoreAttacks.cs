@@ -66,5 +66,8 @@ public class BossCoreAttacks : MonoBehaviour {
 		if (bcooldown == 75) {
 			blaserSprite.SetActive (true);
 		}
+		if (bcooldown == 20) {
+			move.enabled = false;
+		}
 	}
 }

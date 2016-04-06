@@ -14,6 +14,7 @@ public class Enemy_Scale_Health : MonoBehaviour {
 	void Start () {
 		RT = this.GetComponent<RectTransform> ();
 		max = ES.enemyHealth;
+		Debug.Log (max);
 	
 	}
 	

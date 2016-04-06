@@ -16,6 +16,8 @@ public class Scale_Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (PS.playerHealth > max)
+            PS.playerHealth = max;
 		ratio = PS.playerHealth / max;
 		Debug.Log (ratio);
 		RT.localScale = new Vector3(ratio,1 ,1);

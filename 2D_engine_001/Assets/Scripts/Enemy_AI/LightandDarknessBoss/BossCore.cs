@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class BossCore : Enemy_State{
-	[SerializeField] private float VestigeHealth = 8000;
+	public float VestigeHealth = 8000;
 	[SerializeField] private float VestigeResistance = 5;
 	[SerializeField] private bool isAlive = true;
+	[SerializeField] private Animator anim;
 	// Update is called once per frame
 	void Update () {
 		enemyHealth = Mathf.FloorToInt(VestigeHealth);
-		//Check if Dark Vestige is Dead
 		if (VestigeHealth <= 0) {
 			isAlive = false;
+			anim.SetBool ("dying", true);
 		} else {
 			isAlive = true;
 		}
@@ -32,5 +33,10 @@ public class BossCore : Enemy_State{
 			VestigeHealth = 2000;
 		}
 		enemyHealth = Mathf.FloorToInt(VestigeHealth);
+	}
+	void OnCollisionEnter2D(Collision2D c){
+		if (c.gameObject.tag == "Bullet") {
+			TakeDamage (c.gameObject.GetComponent<BulletHit> ().dmg);
+		}
 	}
 }

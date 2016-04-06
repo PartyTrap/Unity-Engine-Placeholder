@@ -35,7 +35,7 @@ public class BulletHit : MonoBehaviour
         }
 		else if (OnHit.gameObject.tag == "Enemy" || OnHit.gameObject.tag == "Boss" || OnHit.gameObject.tag == "MommaSpider")
         {
-            ES.enemyHealth -= (dmg - ES.resistance);
+			ES.enemyHealth -= (dmg - ES.getResist());
             anim = OnHit.gameObject.GetComponent<Animator>();
             if (anim)
                 anim.SetTrigger("Hit");

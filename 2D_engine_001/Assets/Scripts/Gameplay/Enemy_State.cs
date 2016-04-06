@@ -10,10 +10,10 @@ public class Enemy_State : MonoBehaviour {
 	public GameObject boss;
     public GameObject health;
     public int DropChance = 1;
-	public int resistance = 10;
+	private int resistance = 10;
 	public float knockBack = 100.0f;
     public float max;
-    [SerializeField]private AudioManager audio;
+    [SerializeField]private EnviroAudioManager audio;
 
 
 	//Spiderling jr PF spawn & mommaspider death anim pf
@@ -22,7 +22,7 @@ public class Enemy_State : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        audio = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audio = GameObject.Find("EnviroAudioManager").GetComponent<EnviroAudioManager>();
 		if (this.gameObject.tag == "Boss") {
 			
 		} else {
@@ -52,12 +52,10 @@ public class Enemy_State : MonoBehaviour {
 					kb.Normalize ();
 					kb.Scale (new Vector2 (5000.0f, 5000.0f));
 					rb.AddForce (kb * -1);
-					Debug.Log (kb);
 
 				}
 			}
 		} else if (col.gameObject.tag == "Bullet") {
-			Debug.Log ("damage");
 			enemyHealth -= col.GetComponent<BulletHit> ().dmg - resistance;
 			this.GetComponent<Animator> ().SetTrigger ("Hit");
 		}
@@ -71,32 +69,30 @@ public class Enemy_State : MonoBehaviour {
 		}
 		//Destroy Enemy upon its HP reaching 0 or below
 		if (enemyHealth <= 0) {
-			if (this.gameObject.tag == "Boss") {
+			//this is for the tree
+			if (this.gameObject.tag == "Boss" || this.gameObject.tag == "Vestige") {
+				//set the health to 0, boss's scripts will handle its death
 				enemyHealth = 0;
-				Destroy (boss);
-			}
-			if (this.gameObject.tag == "Vestige") {
-				enemyHealth = 0;
-				this.gameObject.SetActive (false);
-			}
-			//If obj is mommaSpider, spawn spider JRs on death
-			if (this.gameObject.tag == "MommaSpider") 
-			{
-				GameObject spider;
-				GameObject spider2;
+			} else {
 
-				spider = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
-				float spiPosY = spider.transform.position.y;
-				spiPosY += 0.5f;
+				//If obj is mommaSpider, spawn spider JRs on death
+				if (this.gameObject.tag == "MommaSpider") {
+					GameObject spider;
+					GameObject spider2;
 
-				spider2 = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
-				float spi2PosY = spider2.transform.position.y;
-				spi2PosY -= 0.5f;
+					spider = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
+					float spiPosY = spider.transform.position.y;
+					spiPosY += 0.5f;
 
-				GameObject explosionObject = Instantiate(this.spiderDeathPF) as GameObject;
-				explosionObject.transform.position = this.transform.position;
+					spider2 = (Instantiate (spiderlingJR, this.transform.position, this.transform.rotation))as GameObject;
+					float spi2PosY = spider2.transform.position.y;
+					spi2PosY -= 0.5f;
+
+					GameObject explosionObject = Instantiate (this.spiderDeathPF) as GameObject;
+					explosionObject.transform.position = this.transform.position;
+				}
+				DestroyMe ();
 			}
-            DestroyMe();
 		}
 
 		//Change resistance of Boss enemy depending on HP level
@@ -133,5 +129,10 @@ public class Enemy_State : MonoBehaviour {
 
 
     }
-
+	public void setResist(int newRes){
+		resistance = newRes;
+	}
+	public int getResist(){
+		return resistance;
+	}
 }

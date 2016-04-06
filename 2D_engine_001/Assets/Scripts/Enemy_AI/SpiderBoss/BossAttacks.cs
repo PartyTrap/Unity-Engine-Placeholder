@@ -12,9 +12,7 @@ public class BossAttacks : MonoBehaviour {
 	public int attackLimit;
 	public FireMissiles missileScript;
 	public FireGuns gunScipt;
-	//public SummonSpiders summonScript;
 	public GameObject flameScript;
-	//public Webstick webscript;
 	// Use this for initialization
 	void Start () {
 	
@@ -22,6 +20,7 @@ public class BossAttacks : MonoBehaviour {
 	void OnDisable(){
 		missileScript.enabled = false;
 		gunScipt.enabled = false;
+		flameScript.SetActive (false);
 	}
 
 	

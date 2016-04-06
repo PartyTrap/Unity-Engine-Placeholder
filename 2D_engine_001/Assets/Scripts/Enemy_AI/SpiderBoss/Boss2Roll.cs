@@ -8,7 +8,6 @@ public class Boss2Roll : MonoBehaviour {
 	public int delaycounter;
 	public int spawncount;
 	public int stops;
-	public int counter;
 	public int battleModeTimer = 0;
 	public int battleModeLimit = 100;
 	public BossAttacks attackscript = null;
@@ -16,6 +15,8 @@ public class Boss2Roll : MonoBehaviour {
 	public GameObject player;
 	public GameObject spawner;
 	public GameObject minion;
+	public GameObject bossSprite;
+	public Roll roll;
 	// Use this for initialization
 	void Start () {
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -50);
@@ -26,9 +27,6 @@ public class Boss2Roll : MonoBehaviour {
 	void Update () {
 		if (!delay) {
 			if (!battleMode) {
-				counter++;
-				if (counter == 30) {
-					counter = 0;
 					switch (stops) {
 					case 0:
 						this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 0);
@@ -43,16 +41,30 @@ public class Boss2Roll : MonoBehaviour {
 						this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 270);
 						break;
 					}
-					this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -15000);
+					this.gameObject.GetComponent<Rigidbody2D> ().AddForce (this.transform.up * -1900);
 					spawncount++;
-					if (spawncount == 2) {
+					if (spawncount == 60) {
 						spawncount = 0;
 						Instantiate (minion, spawner.transform.position, spawner.transform.rotation);
 					}
-				}
 			}
 			if (this.gameObject.GetComponent<Rigidbody2D> ().isKinematic) {
 				battleMode = true;
+				roll.enabled = false;
+				switch (stops) {
+				case 0:
+					this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 0);
+					break;
+				case 1:
+					this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 90);
+					break;
+				case 2:
+					this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 180);
+					break;
+				case 3:
+					this.gameObject.transform.eulerAngles = new Vector3 (0, 0, 270);
+					break;
+				}
 			}
 			if (battleMode) {
 				battleModeTimer++;
@@ -62,6 +74,7 @@ public class Boss2Roll : MonoBehaviour {
 					battleMode = false;
 					attackscript.enabled = false;
 					player.GetComponent<Rigidbody2D> ().isKinematic = true;
+					bossSprite.GetComponent<CircleCollider2D> ().enabled = false;
 					switch (stops) {
 					case 0:
 						player.GetComponent<Rigidbody2D> ().isKinematic = false;
@@ -93,31 +106,89 @@ public class Boss2Roll : MonoBehaviour {
 			}
 		} else {
 			delaycounter++;
+			//Rappel up
+			if (delaycounter > 1 && delaycounter < 60) {
+				switch (stops) {
+				case 0:
+					bossSprite.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
+					break;
+				case 1:
+					bossSprite.transform.Translate (new Vector3 (1.0f, 0.0f, 0.0f));
+					break;
+				case 2:
+					bossSprite.transform.Translate (new Vector3 (0.0f, -1.0f, 0.0f));
+					break;
+				case 3:
+					bossSprite.transform.Translate (new Vector3 (-1.0f, 0.0f, 0.0f));
+					break;
+				}
+			}
+			//Change the Boss's position
+			if (delaycounter == 60) {
+				switch(stops){
+				case 0:
+					this.transform.position = new Vector3 (1.74f, -41.86f, 0.0f);
+					break;
+				case 1:
+					this.transform.position = new Vector3 (40.12f, -41.26f, 0.0f);
+					break;
+				case 2:
+					this.transform.position = new Vector3 (39.22f, -2.05f, 0.0f);
+					break;
+				case 3:
+					this.transform.position = new Vector3 (-0.51f, 2.23f, 0.0f);
+					break;
+				}
+			}
+			//Rappel down
+			if (delaycounter < 120 && delaycounter > 60) {
+				switch (stops) {
+				case 0:
+					bossSprite.transform.Translate (new Vector3 (0.0f, -1.0f, 0.0f));
+					break;
+				case 1:
+					bossSprite.transform.Translate (new Vector3 (-1.0f, 0.0f, 0.0f));
+					break;
+				case 2:
+					bossSprite.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
+					break;
+				case 3:
+					bossSprite.transform.Translate (new Vector3 (1.0f, 0.0f, 0.0f));
+					break;
+				}
+			}
+			//End of Rappel
 			if (delaycounter == 120) {
 				delaycounter = 0;
 				delay = false;
+				roll.enabled = true;
 				switch (stops) {
 				case 0:
-					this.transform.position = new Vector3 (1.27f, -41.88f, 0.0f);
+					
 					this.transform.eulerAngles = new Vector3 (0, 0, 90);
+					this.transform.position = new Vector3 (1.74f, -41.86f, 0.0f);
 					this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 					break;
 				case 1:
-					this.transform.position = new Vector3 (40.43f, -41.02f, 0.0f);
+					
 					this.transform.eulerAngles = new Vector3 (0, 0, 180);
+					this.transform.position = new Vector3 (40.12f, -41.26f, 0.0f);
 					this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 					break;
 				case 2:
-					this.transform.position = new Vector3 (40.1f, -1.0f, 0.0f);
+					
 					this.transform.eulerAngles = new Vector3 (0, 0, 270);
+					this.transform.position = new Vector3 (39.22f, -2.05f, 0.0f);
 					this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 					break;
 				case 3:
-					this.transform.position = new Vector3 (-0.63f, 2.35f, 0.0f);
+					
 					this.transform.eulerAngles = new Vector3 (0, 0, 0);
+					this.transform.position = new Vector3 (0.51f, -2.23f, 0.0f);
 					this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 					break;
 				}
+				bossSprite.GetComponent<CircleCollider2D> ().enabled = true;
 				stops++;
 				if (stops == 4) {
 					stops = 0;
