@@ -36,11 +36,7 @@ public class DarkVestige : Enemy_State {
 	}
 	void OnCollisionEnter2D(Collision2D c){
 		if (c.gameObject.tag == "Bullet") {
-<<<<<<< HEAD
 			TakeDamage (c.gameObject.GetComponent<BulletHit> ().dmg);
-=======
-			TakeDamage (c.gameObject.GetComponent<Player_State> ().dmg);
->>>>>>> origin/master
 		}
 	}
 }
